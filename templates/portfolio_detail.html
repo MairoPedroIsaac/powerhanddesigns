@@ -1,0 +1,154 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ project.title }} - Portfolio - Powerhand Designs{% endblock %}
+
+{% block content %}
+<!-- Project Hero -->
+<section class="project-hero" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('{{ project.featured_image.url }}') center/cover no-repeat;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center text-white py-5">
+                <div class="project-category mb-3">
+                    <span class="badge bg-warning text-dark">{{ project.get_category_display }}</span>
+                </div>
+                <h1 class="display-3 fw-bold mb-4">{{ project.title }}</h1>
+                <p class="lead">{{ project.tagline }}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Project Details -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row g-5">
+            <!-- Project Info Sidebar -->
+            <div class="col-lg-4">
+                <div class="project-info-card sticky-top">
+                    <h4 class="mb-4">Project Details</h4>
+                    
+                    <div class="info-item">
+                        <h6 class="text-muted mb-2">Client</h6>
+                        <p class="fw-bold">{{ project.client_name }}</p>
+                    </div>
+                    
+                    <div class="info-item">
+                        <h6 class="text-muted mb-2">Industry</h6>
+                        <p>{{ project.industry }}</p>
+                    </div>
+                    
+                    <div class="info-item">
+                        <h6 class="text-muted mb-2">Services</h6>
+                        <p>{{ project.services }}</p>
+                    </div>
+                    
+                    <div class="info-item">
+                        <h6 class="text-muted mb-2">Year</h6>
+                        <p>{{ project.year }}</p>
+                    </div>
+                    
+                    {% if project.website_url %}
+                    <div class="info-item">
+                        <a href="{{ project.website_url }}" target="_blank" class="btn btn-warning w-100 mt-3">
+                            <i class="fas fa-external-link-alt me-2"></i>Visit Website
+                        </a>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            
+            <!-- Project Content -->
+            <div class="col-lg-8">
+                <!-- Challenge Section -->
+                <div class="project-section mb-5">
+                    <h3 class="section-title">The Challenge</h3>
+                    <p class="project-text">{{ project.challenge|linebreaks }}</p>
+                </div>
+                
+                <!-- Solution Section -->
+                <div class="project-section mb-5">
+                    <h3 class="section-title">Our Solution</h3>
+                    <p class="project-text">{{ project.solution|linebreaks }}</p>
+                </div>
+                
+                <!-- Results Section -->
+                {% if project.results %}
+                <div class="project-section mb-5">
+                    <h3 class="section-title">Results</h3>
+                    <p class="project-text">{{ project.results|linebreaks }}</p>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Project Gallery -->
+<section class="py-5">
+    <div class="container">
+        <h3 class="text-center mb-5">Project Gallery</h3>
+        <div class="row g-4">
+            {% for image in project.gallery_images.all %}
+            <div class="col-lg-6">
+                <div class="gallery-item">
+                    <img src="{{ image.image.url }}" alt="{{ image.caption }}" class="img-fluid rounded shadow-sm">
+                    {% if image.caption %}
+                    <p class="text-center text-muted mt-2">{{ image.caption }}</p>
+                    {% endif %}
+                </div>
+            </div>
+            {% empty %}
+            <div class="col-12 text-center text-muted">
+                <p>No gallery images available for this project.</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Testimonial Section -->
+{% if project.testimonial %}
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <p class="testimonial-text">"{{ project.testimonial }}"</p>
+                    <div class="testimonial-author">
+                        <h6 class="mb-0">{{ project.testimonial_author }}</h6>
+                        <small class="text-muted">{{ project.testimonial_position }}</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- More Projects -->
+<section class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h3>More Projects</h3>
+            <a href="{% url 'portfolio' %}" class="btn btn-outline-dark mt-3">View All Projects</a>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-5" style="background: #F0BB13;">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 text-center text-lg-start mb-4 mb-lg-0">
+                <h3 class="fw-bold mb-2" style="color: #000000;">Inspired by This Project?</h3>
+                <p class="mb-0" style="color: #000000;">Let's create something amazing for your brand too.</p>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <a href="{% url 'contact' %}" class="btn btn-dark btn-lg px-5">Start Your Project</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

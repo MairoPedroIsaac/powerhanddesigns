@@ -1,0 +1,265 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home - Powerhand Designs{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section d-flex align-items-center min-vh-100">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 col-xl-8 text-center text-white">
+                <h1 class="hero-title animate-fade-in">
+                    Designing Your Brand for<br>
+                    the Market and the Planet.
+                </h1>
+                <p class="hero-subtitle animate-fade-in-delay">
+                    Powerhand Designs is a Pan-African creative agency crafting sustainable, impactful brand<br>
+                    identities that make businesses unforgettable.
+                </p>
+                <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 mt-4 animate-fade-in-delay-2">
+                    <a href="{% url 'solutions' %}" class="btn btn-warning btn-lg">
+                        Explore Our Solutions
+                    </a>
+                    <a href="{% url 'contact' %}" class="btn btn-outline-light btn-lg">
+                        Get Started
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row text-center mb-5">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="display-5 fw-bold mb-3">Why Choose Powerhand Designs?</h2>
+                <p class="lead text-muted">We combine creativity with sustainability to deliver exceptional results</p>
+            </div>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body text-center p-4">
+                        <div class="feature-icon">
+                            <i class="fas fa-paint-brush fa-3x"></i>
+                        </div>
+                        <h4 class="card-title">Creative Excellence</h4>
+                        <p class="card-text">Innovative designs that capture your brand essence and communicate your unique story effectively.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body text-center p-4">
+                        <div class="feature-icon">
+                            <i class="fas fa-leaf fa-3x"></i>
+                        </div>
+                        <h4 class="card-title">Sustainable Solutions</h4>
+                        <p class="card-text">Eco-conscious branding strategies that reduce environmental impact while maximizing business growth.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body text-center p-4">
+                        <div class="feature-icon">
+                            <i class="fas fa-globe fa-3x"></i>
+                        </div>
+                        <h4 class="card-title">African Focus</h4>
+                        <p class="card-text">Deep understanding of African markets and cultures to create brands that resonate locally and globally.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Solutions Preview Section -->
+<section class="py-5" id="solutions-preview">
+    <div class="container">
+        <div class="row text-center mb-5">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="display-5 fw-bold mb-3">Holistic Creative Solutions</h2>
+                <p class="lead text-muted">A complete suite of services designed for impactful, sustainable growth.</p>
+            </div>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="card p-4 shadow-sm border-0 h-100 solution-card">
+                    <div class="card-body">
+                        <div class="solution-icon mb-3">
+                            <i class="fas fa-bullseye fa-2x text-warning"></i>
+                        </div>
+                        <h5 class="card-title fw-bold">Brand Strategy</h5>
+                        <p class="card-text">Market research, positioning, naming, tone & messaging built for conversion.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="card p-4 shadow-sm border-0 h-100 solution-card">
+                    <div class="card-body">
+                        <div class="solution-icon mb-3">
+                            <i class="fas fa-palette fa-2x text-warning"></i>
+                        </div>
+                        <h5 class="card-title fw-bold">Identity & Logo</h5>
+                        <p class="card-text">Logo systems, brand guidelines, typography and color systems for consistency across touchpoints.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="card p-4 shadow-sm border-0 h-100 solution-card">
+                    <div class="card-body">
+                        <div class="solution-icon mb-3">
+                            <i class="fas fa-print fa-2x text-warning"></i>
+                        </div>
+                        <h5 class="card-title fw-bold">Print and Fabrication</h5>
+                        <p class="card-text">High-quality printing and fabrication using sustainable materials when possible.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="card p-4 shadow-sm border-0 h-100 solution-card">
+                    <div class="card-body">
+                        <div class="solution-icon mb-3">
+                            <i class="fas fa-box fa-2x text-warning"></i>
+                        </div>
+                        <h5 class="card-title fw-bold">Eco Packaging</h5>
+                        <p class="card-text">We design product packaging solutions that balance aesthetics, function, and sustainability.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="card p-4 shadow-sm border-0 h-100 solution-card">
+                    <div class="card-body">
+                        <div class="solution-icon mb-3">
+                            <i class="fas fa-building fa-2x text-warning"></i>
+                        </div>
+                        <h5 class="card-title fw-bold">Environmental Design</h5>
+                        <p class="card-text">Transform your office and event space into a bold, inspiring, and sustainable brand experience.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="card p-4 shadow-sm border-0 h-100 solution-card">
+                    <div class="card-body">
+                        <div class="solution-icon mb-3">
+                            <i class="fas fa-chalkboard-teacher fa-2x text-warning"></i>
+                        </div>
+                        <h5 class="card-title fw-bold">Workshops & Consultations</h5>
+                        <p class="card-text">Empower your team with the mindset and tools to embed sustainability in every design decision.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-5">
+            <a href="{% url 'solutions' %}" class="btn btn-outline-dark btn-lg">
+                View All Solutions <i class="fas fa-arrow-right ms-2"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Stats and Portfolio CTA Section -->
+<section class="py-5 bg-warning text-dark">
+    <div class="container">
+        <div class="row text-center mb-5">
+            <div class="col-md-4 mb-4 mb-md-0">
+                <div class="stat-item">
+                    <h2 class="display-4 fw-bold mb-2">1000+</h2>
+                    <p class="lead mb-0">Projects Completed</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4 mb-md-0">
+                <div class="stat-item">
+                    <h2 class="display-4 fw-bold mb-2">8+</h2>
+                    <p class="lead mb-0">Years in Operation</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="stat-item">
+                    <h2 class="display-4 fw-bold mb-2">3</h2>
+                    <p class="lead mb-0">Offices Nationwide</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h3 class="display-6 fw-bold mb-4">See Our Impactful Work</h3>
+                <p class="lead mb-4">Discover how we've helped leading Pan-African brands grow their business.</p>
+                <a href="{% url 'portfolio' %}" class="btn btn-dark btn-lg">
+                    View Our Portfolio <i class="fas fa-image ms-2"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Trusted Clients Section -->
+<section class="py-5 bg-light" id="clients-section">
+    <div class="container">
+        <div class="row text-center mb-5">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="display-5 fw-bold mb-3">Our Trusted Clients</h2>
+                <p class="lead text-muted">We partner with ambitious brands across various sectors who share our vision for sustainability.</p>
+            </div>
+        </div>
+        
+        <div class="row align-items-center justify-content-center g-4">
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center">
+                <img src="{% static 'images/phases-spaces-logo.svg' %}" alt="Phases & Spaces Inc. Logo" class="img-fluid client-logo" style="max-height: 50px;">
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center">
+                <img src="{% static 'images/schematiq-logo.svg' %}" alt="Schematiq Logo" class="img-fluid client-logo" style="max-height: 50px;">
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center">
+                <img src="{% static 'images/memento-logo.svg' %}" alt="Memento Logo" class="img-fluid client-logo" style="max-height: 50px;">
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center">
+                <img src="{% static 'images/sprig-sky-logo.svg' %}" alt="Sprig & Sky Logo" class="img-fluid client-logo" style="max-height: 50px;">
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center">
+                <img src="{% static 'images/chapter-co-books-logo.svg' %}" alt="Chapter & Co Books Logo" class="img-fluid client-logo" style="max-height: 50px;">
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center">
+                <img src="{% static 'images/cura-aid-logo.svg' %}" alt="CuraAid+ Logo" class="img-fluid client-logo" style="max-height: 50px;">
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center">
+                <img src="{% static 'images/crowd-zero-logo.svg' %}" alt="Crowd Zero Logo" class="img-fluid client-logo" style="max-height: 50px;">
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center">
+                <img src="{% static 'images/wilderness-watchers-logo.svg' %}" alt="Wilderness Watchers Foundation Logo" class="img-fluid client-logo" style="max-height: 50px;">
+            </div>
+        </div>
+        
+        <div class="text-center mt-5">
+            <a href="{% url 'contact' %}" class="btn btn-outline-dark btn-lg">Partner With Us Today</a>
+        </div>
+    </div>
+</section>
+
+<!-- Final CTA Section -->
+<section class="py-5 bg-dark text-white">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 text-center text-lg-start mb-4 mb-lg-0">
+                <h3 class="fw-bold mb-2">Ready to Transform Your Brand?</h3>
+                <p class="mb-0">Let's create something amazing together that stands out and makes a difference.</p>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <a href="{% url 'contact' %}" class="btn btn-warning btn-lg px-5">Start Your Project</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
