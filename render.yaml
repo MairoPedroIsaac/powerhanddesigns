@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: powerhanddesigns
+    env: python
+    plan: free
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn powerhand.wsgi:application"
+    envVars:
+      - key: DEBUG
+        value: false
+      - key: SECRET_KEY
+        generateValue: true
+      - key: EMAIL_HOST_USER
+        value: mosesaugustine25@gmail.com
+      - key: EMAIL_HOST_PASSWORD
+        value: "xozd zcph fbwu iqvx"
