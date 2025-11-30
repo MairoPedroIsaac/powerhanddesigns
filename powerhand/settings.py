@@ -8,8 +8,13 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-yehf9651*m_-$ay&@^+0a4lae1^$eaf26=_mez(2(pd9sq1c=h'
-DEBUG = True
-ALLOWED_HOSTS = []
+DEBUG = False
+ALLOWED_HOSTS = [
+    'powerhanddesigns.onrender.com',
+    '.onrender.com', 
+    'localhost',
+    '127.0.0.1'
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
