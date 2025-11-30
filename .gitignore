@@ -1,0 +1,25 @@
+# .gitignore
+
+# Django
+*.pyc
+*__pycache__/
+db.sqlite3
+migrations/
+
+# Environment variables
+.env
+.env.local
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Static files (if collected)
+/staticfiles/
+/media/

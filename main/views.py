@@ -59,7 +59,7 @@ def portfolio_view(request):
     featured_projects = Project.objects.filter(is_featured=True)
     
     # Get unique categories for filtering
-    categories = Project.CATEGORY_CHOICES
+    categories = Project.CATEGORY_CHOICES  
     
     context = {
         'projects': projects,
