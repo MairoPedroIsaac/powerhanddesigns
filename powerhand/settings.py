@@ -8,13 +8,21 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-yehf9651*m_-$ay&@^+0a4lae1^$eaf26=_mez(2(pd9sq1c=h'
-DEBUG = False
-ALLOWED_HOSTS = [
-    'powerhanddesigns.onrender.com',
-    '.onrender.com', 
-    'localhost',
-    '127.0.0.1'
-]
+DEBUG = os.environ.get('DEBUG', 'True').lower() == 'true'
+
+if DEBUG:
+    # Local development
+    ALLOWED_HOSTS = ['*']
+else:
+    # Production on Render
+    ALLOWED_HOSTS = [
+        'powerhanddesigns.onrender.com',
+        '.onrender.com', 
+        'localhost',
+        '127.0.0.1'
+    ]
+
+ALLOWED_HOSTS = ['*']  # Allow all hosts for now
 
 INSTALLED_APPS = [
     'django.contrib.admin',
