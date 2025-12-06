@@ -69,6 +69,9 @@ body {
     margin-right: auto;
     opacity: 0;
     animation: fadeInUp 1s ease-out 0.5s forwards;
+    /* NEW: Better text control */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 /* Fade-in and Slide-up Animation */
@@ -372,7 +375,9 @@ footer .contact-item:hover .text-light {
     }
     
     .hero-subtitle {
-        font-size: 1.1rem;
+        font-size: 1rem !important;
+        line-height: 1.5 !important;
+        max-width: 500px !important;
     }
     
     .navbar-brand {
