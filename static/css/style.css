@@ -31,13 +31,78 @@ body {
     font-size: 3.5rem;
     margin-bottom: 1.5rem;
     font-weight: 700;
+    opacity: 1;
 }
 
+/* Ensure typing word stays visible during animation */
+.typing-word {
+    color: #F0BB13 !important;
+    display: inline-block;
+    border-right: 3px solid #F0BB13;
+    animation: blink 0.7s step-end infinite;
+    opacity: 1 !important; /* Force visibility */
+}
+
+/* 👇 ADD THIS - Typing animation for the changing word */
+.typing-word {
+    color: #F0BB13; /* Yellow color for "Impact" */
+    display: inline-block;
+    border-right: 3px solid #F0BB13;
+    animation: blink 0.7s step-end infinite;
+}
+
+/* Cursor blink animation */
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+/* The actual text change animation will be done with JavaScript */
+
+/* Hero Subtitle with Fade-in and Slide-up Animation */
 .hero-subtitle {
     color: white;
-    font-size: 1.3rem;
+    font-size: 1.15rem;
     line-height: 1.6;
     margin-bottom: 2rem;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 0.5s forwards;
+}
+
+/* Fade-in and Slide-up Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Button Container Animation */
+.animate-fade-in-delay-2 {
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 0.8s forwards;
+}
+
+/* Add a subtle pulse effect to buttons on hover */
+.btn-warning, .btn-outline-light {
+    transition: all 0.3s ease;
+}
+
+.btn-warning:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255, 193, 7, 0.4);
+}
+
+.btn-outline-light:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
 }
 
 /* Navigation */
@@ -117,17 +182,11 @@ body {
     margin-bottom: 1.5rem;
 }
 
-/* EXACT ICON COLORS YOU WANT */
-.fa-paint-brush {
-    color: #ff9800 !important; /* Orange for Creative Excellence */
-}
-
-.fa-leaf {
-    color: #4caf50 !important; /* Green for Sustainable Solutions */
-}
-
-.fa-globe {
-    color: #2196f3 !important; /* Blue for African Focus */
+/* Feature Icons - All in Primary Yellow - MORE SPECIFIC */
+.feature-icon .fa-paint-brush,
+.feature-icon .fa-leaf,
+.feature-icon .fa-globe {
+    color: #F0BB13 !important;
 }
 
 .card-title {
@@ -1689,5 +1748,551 @@ html {
     
     .contact-info .contact-item {
         padding: 15px;
+    }
+}
+
+/* ===================================
+   POPUP BANNER & ANIMATION STYLES
+   =================================== */
+
+/* Popup Banner Container */
+.popup-banner-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    transition: all 0.5s ease;
+}
+
+.popup-banner {
+    transition: transform 0.5s ease;
+}
+
+.popup-banner-container:hover .popup-banner {
+    transform: scale(1.05);
+}
+
+.popup-overlay {
+    background: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    border-radius: 16px;
+}
+
+.popup-banner-container:hover .popup-overlay {
+    opacity: 1;
+}
+
+.zoom-in-btn {
+    transform: scale(0.9);
+    transition: all 0.3s ease;
+}
+
+.popup-banner-container:hover .zoom-in-btn {
+    transform: scale(1);
+    box-shadow: 0 10px 30px rgba(240, 187, 19, 0.5);
+}
+
+/* Modal Animation */
+.modal-content {
+    animation: modalSlideUp 0.4s ease-out;
+}
+
+@keyframes modalSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile Optimization - Reduce Boldness */
+@media (max-width: 768px) {
+    /* Reduce font sizes for mobile */
+    .hero-title {
+        font-size: 2.2rem !important;
+        font-weight: 700 !important; /* Slightly reduced */
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem !important;
+        line-height: 1.5 !important;
+    }
+    
+    .display-5, .display-6 {
+        font-size: 1.8rem !important;
+        font-weight: 700 !important;
+    }
+    
+    .display-4 {
+        font-size: 2.5rem !important;
+        font-weight: 800 !important;
+    }
+    
+    .lead {
+        font-size: 1rem !important;
+        font-weight: 400 !important;
+    }
+    
+    .card-title {
+        font-size: 1.1rem !important;
+        font-weight: 600 !important;
+    }
+    
+    .card-text {
+        font-size: 0.95rem !important;
+    }
+    
+    /* Reduce boldness in features section */
+    .feature-icon i {
+        font-size: 2.5rem !important;
+    }
+    
+    /* Make buttons more balanced */
+    .btn-lg {
+        padding: 10px 20px !important;
+        font-size: 1rem !important;
+    }
+    
+    /* Client logos spacing */
+    .client-logo {
+        margin: 10px 0;
+        max-height: 50px !important;
+    }
+}
+
+/* Zoom-in animation for various elements */
+.zoom-in {
+    animation: zoomIn 0.6s ease-out;
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Pop-up animation */
+.pop-up {
+    animation: popUp 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+@keyframes popUp {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    70% {
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Apply animations to solution cards */
+.solution-card {
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* Make solution icons consistent with feature icons */
+.solution-icon i {
+    transition: all 0.3s ease;
+}
+
+.solution-card:hover .solution-icon i {
+    transform: scale(1.2);
+}
+
+/* Ensure all icons have the same size in solutions section */
+.fa-3x {
+    font-size: 3em !important;
+}
+
+/* ===================================
+   FIX FEATURE ICON COLORS - MAKE THEM YELLOW
+   =================================== */
+.feature-icon .fas {
+    color: #F0BB13 !important;
+}
+
+/* ===================================
+   ULTIMATE FORCE FIX FOR FEATURE ICONS
+   This WILL override ANYTHING else
+   =================================== */
+.card.border-0.shadow-sm .card-body .feature-icon i.fas,
+.card.border-0.shadow-sm .card-body .feature-icon i.fa-paint-brush,
+.card.border-0.shadow-sm .card-body .feature-icon i.fa-leaf,
+.card.border-0.shadow-sm .card-body .feature-icon i.fa-globe,
+.feature-icon i[class*="fa-"] {
+    color: #F0BB13 !important;
+    fill: #F0BB13 !important;
+    stroke: #F0BB13 !important;
+}
+
+/* Default changing text style (white) */
+#changing-text {
+    color: white;
+    display: inline-block;
+}
+
+/* Yellow style for "Impact" - will be added by JavaScript */
+.typing-word {
+    color: #F0BB13 !important;
+    border-right: 3px solid #F0BB13;
+    animation: blink 0.7s step-end infinite;
+}
+
+/* Cursor blink animation */
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+/* ===================================
+   ENHANCED CLIENT LOGOS - BIGGER & BOLDER
+   =================================== */
+.client-logo-container {
+    padding: 25px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 120px; /* Fixed height for consistency */
+}
+
+.client-logo {
+    max-height: 70px !important; /* Bigger logos */
+    max-width: 100%;
+    width: auto;
+    filter: grayscale(100%) brightness(0.7);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0.8;
+}
+
+.client-logo-container:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(240, 187, 19, 0.3);
+    background: linear-gradient(135deg, #ffffff 0%, #fffbf0 100%);
+    border: 2px solid #F0BB13;
+}
+
+.client-logo-container:hover .client-logo {
+    filter: grayscale(0%) brightness(1);
+    opacity: 1;
+    transform: scale(1.15);
+}
+
+/* Golden glow animation on hover */
+@keyframes goldenGlow {
+    0%, 100% { box-shadow: 0 20px 40px rgba(240, 187, 19, 0.3); }
+    50% { box-shadow: 0 20px 50px rgba(240, 187, 19, 0.5); }
+}
+
+.client-logo-container:hover {
+    animation: goldenGlow 2s infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .client-logo-container {
+        padding: 20px;
+        height: 100px;
+    }
+    
+    .client-logo {
+        max-height: 60px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .client-logo-container {
+        padding: 15px;
+        height: 90px;
+    }
+    
+    .client-logo {
+        max-height: 50px !important;
+    }
+}
+
+/* ===================================
+   LOGO IMAGE 100% FILL MODAL STYLES
+   =================================== */
+
+/* Use fullscreen modal */
+.modal-fullscreen .modal-dialog {
+    max-width: 100% !important;
+    margin: 0 !important;
+    height: 100vh !important;
+}
+
+.modal-fullscreen .modal-content {
+    height: 100vh !important;
+    border-radius: 0 !important;
+    background: rgba(0, 0, 0, 0.9) !important; /* Dark overlay background */
+    border: none !important;
+}
+
+/* Center the image perfectly */
+#bannerModal .modal-body {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 100vh !important;
+    padding: 0 !important;
+    background: transparent !important;
+}
+
+/* Logo image styling - 100% visible */
+#bannerModal img {
+    object-fit: contain !important;
+    max-width: 90% !important;
+    max-height: 90vh !important;
+    width: auto !important;
+    height: auto !important;
+    display: block !important;
+    margin: 0 auto !important;
+    border: 3px solid #F0BB13 !important;
+    border-radius: 20px !important;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Close button */
+#bannerModal .btn-close {
+    z-index: 1050;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    background-color: white !important;
+    opacity: 1 !important;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    #bannerModal img {
+        max-width: 95% !important;
+        max-height: 85vh !important;
+    }
+    
+    #bannerModal .btn-close {
+        top: 15px;
+        right: 15px;
+        width: 35px;
+        height: 35px;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 576px) {
+    #bannerModal img {
+        max-width: 98% !important;
+        max-height: 80vh !important;
+        border-width: 2px !important;
+        border-radius: 15px !important;
+    }
+    
+    #bannerModal .btn-close {
+        top: 10px;
+        right: 10px;
+        width: 30px;
+        height: 30px;
+        padding: 7px;
+    }
+}
+
+/* ===================================
+   ABOUT PAGE - CEO SECTION STYLES
+   =================================== */
+
+/* CEO Image Container */
+.ceo-image-container {
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    border: 3px solid transparent;
+}
+
+.ceo-image-container:hover {
+    transform: translateY(-10px);
+    border-color: #F0BB13;
+    box-shadow: 0 20px 50px rgba(240, 187, 19, 0.3);
+}
+
+.ceo-image-container img {
+    transition: transform 0.5s ease;
+}
+
+.ceo-image-container:hover img {
+    transform: scale(1.05);
+}
+
+/* Quote Container */
+.quote-container {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #F0BB13;
+    position: relative;
+}
+
+.quote-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+/* Social Buttons */
+.social-btn {
+    transition: all 0.3s ease;
+    border-width: 2px;
+    padding: 10px 25px;
+}
+
+.social-btn:hover {
+    background-color: #F0BB13;
+    border-color: #F0BB13;
+    color: #000000;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(240, 187, 19, 0.3);
+}
+
+/* Animations */
+.zoom-in {
+    animation: zoomIn 1s ease-out;
+}
+
+.pop-up {
+    animation: popUp 1s ease-out 0.3s both;
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes popUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+    }
+    70% {
+        transform: translateY(-10px) scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .quote-container {
+        padding: 30px;
+    }
+    
+    .quote-container h3 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .ceo-image-container {
+        margin-bottom: 30px;
+    }
+    
+    .quote-container {
+        padding: 25px;
+    }
+    
+    .quote-container h3 {
+        font-size: 1.75rem;
+    }
+    
+    .social-btn {
+        padding: 8px 20px;
+        font-size: 1rem;
+    }
+}
+
+/* ===================================
+   ENHANCED MOBILE OPTIMIZATION
+   =================================== */
+@media (max-width: 768px) {
+    /* Reduce ALL heading boldness */
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: 600 !important;
+    }
+    
+    /* Lighten hero title specifically */
+    .hero-title {
+        font-size: 2rem !important;
+        font-weight: 600 !important;
+        line-height: 1.3 !important;
+    }
+    
+    /* Reduce spacing for tighter mobile layout */
+    section.py-5 {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+    }
+    
+    /* Smaller card padding */
+    .card-body {
+        padding: 1.5rem !important;
+    }
+    
+    /* Reduce solution card icon size */
+    .solution-icon i {
+        font-size: 2rem !important;
+    }
+    
+    /* Lighter button font */
+    .btn {
+        font-weight: 500 !important;
+    }
+    
+    /* Reduce stats numbers */
+    .stat-item h2 {
+        font-size: 2.5rem !important;
+        font-weight: 700 !important;
+    }
+}
+
+@media (max-width: 576px) {
+    /* Even lighter for smaller phones */
+    .hero-title {
+        font-size: 1.75rem !important;
+        font-weight: 600 !important;
+    }
+    
+    h1, h2, h3 {
+        font-weight: 600 !important;
+    }
+    
+    h4, h5, h6 {
+        font-weight: 500 !important;
     }
 }

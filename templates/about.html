@@ -25,55 +25,96 @@
         <div class="row align-items-center">
             <div class="col-lg-6 mb-4 mb-lg-0">
                 <div class="about-image-container">
-                    <img src="{% static 'images/about-team.jpg' %}" alt="Powerhand Designs Team" class="img-fluid rounded-4 shadow-lg">
+                    <img src="{% static 'images/Image_fx (32).jpeg' %}" alt="Powerhand Designs" class="img-fluid rounded-4 shadow-lg">
                 </div>
             </div>
             <div class="col-lg-6 ps-lg-5">
                 <h2 class="display-4 fw-bold mb-4">About Us</h2>
                 <p class="fs-5 mb-4">
-                    At Powerhand Designs, we merge creativity and sustainability to build powerful brand identities that resonate with purpose.
-                </p>
+                   Powerhand Designs is a sustainability-driven branding agency for African SMEs. We solve <strong>two core issues:</strong> environmental waste from traditional branding materials and the lack of professional, affordable brand identity design.
+               </p>
                 <p class="fs-5 mb-5">
                     Our mission is to empower African businesses to thrive through eco-conscious branding solutions that elevate their impact on both market and planet.
                 </p>
-                
-                <div class="values-list">
-                    <div class="d-flex align-items-start mb-3">
-                        <div class="bullet-point"></div>
-                        <p class="fs-5 mb-0">Creativity with conscience</p>
-                    </div>
-                    <div class="d-flex align-items-start mb-3">
-                        <div class="bullet-point"></div>
-                        <p class="fs-5 mb-0">Purpose-driven design</p>
-                    </div>
-                    <div class="d-flex align-items-start">
-                        <div class="bullet-point"></div>
-                        <p class="fs-5 mb-0">Empowering sustainable African brands</p>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
 </section>
 
+<!-- CEO Quote Section -->
 <section class="py-5 bg-light">
     <div class="container">
-        <div class="row text-center">
-            <div class="col-md-4 mb-4">
-                <h3 class="display-6 fw-bold text-warning">50+</h3>
-                <p class="text-muted fs-5">Projects Completed</p>
+        <div class="row align-items-center">
+            <!-- CEO Image -->
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <div class="ceo-image-container position-relative">
+                    <img src="{% static 'images/aaa-1[1].png' %}" 
+                         alt="Augustine Moses - Founder & CEO" 
+                         class="img-fluid rounded-4 shadow-lg w-100 zoom-in">
+                    <div class="position-absolute bottom-0 start-0 w-100 text-center p-3" 
+                         style="background: rgba(0, 0, 0, 0.7); border-bottom-left-radius: 16px; border-bottom-right-radius: 16px;">
+                        <h5 class="text-white mb-1 fw-bold">Augustine Moses</h5>
+                        <p class="text-warning mb-0">Founder & CEO</p>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-4 mb-4">
-                <h3 class="display-6 fw-bold text-warning">30+</h3>
-                <p class="text-muted fs-5">Happy Clients</p>
-            </div>
-            <div class="col-md-4 mb-4">
-                <h3 class="display-6 fw-bold text-warning">10+</h3>
-                <p class="text-muted fs-5">Countries Reached</p>
+            
+            <!-- CEO Quote -->
+            <div class="col-lg-8 ps-lg-5">
+                <div class="quote-container position-relative pop-up">
+                    <!-- Opening Quote Mark -->
+                    <div class="position-absolute top-0 start-0 translate-middle" 
+                         style="font-size: 5rem; color: #F0BB13; opacity: 0.2; z-index: 1;">
+                        "
+                    </div>
+                    
+                    <!-- Quote Content -->
+                    <div class="position-relative z-2 ps-5">
+                        <h3 class="display-5 fw-bold mb-4" style="color: #000000;">
+                            "Design has the power to shape the future at its very beginning"
+                        </h3>
+                        
+                        <p class="fs-4 mb-4">
+                            So we merge creativity and sustainability to build brand identities that help SMEs stand out while contributing to a positive planet.
+                        </p>
+                        
+                        <div class="d-flex align-items-center mt-5 pt-3 border-top border-2 border-warning">
+                            <div>
+                                <h5 class="fw-bold mb-1">Augustine Moses</h5>
+                                <p class="text-muted mb-0">Founder and CEO, Powerhand Designs</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+        
+       <!-- Social Handles -->
+        <div class="row mt-5 pt-4">
+            <div class="col-12 text-center">
+                <h4 class="fw-bold mb-4">Connect With Us</h4>
+                <div class="d-flex justify-content-center flex-wrap gap-3">
+                    <a href="https://www.instagram.com/branded_bypowerhand/" target="_blank" 
+                       class="btn btn-outline-dark btn-lg social-btn">
+                        <i class="fab fa-instagram me-2"></i> Instagram
+                    </a>
+                    <a href="https://www.facebook.com/augustine.moses.180/" target="_blank" 
+                       class="btn btn-outline-dark btn-lg social-btn">
+                        <i class="fab fa-facebook me-2"></i> Facebook
+                    </a>
+                    <a href="https://linkedin.com/company/powerhand-designs" target="_blank" 
+                       class="btn btn-outline-dark btn-lg social-btn">
+                        <i class="fab fa-linkedin me-2"></i> LinkedIn
+                    </a>
+                    <a href="http://wa.me/2347039053411" target="_blank" 
+                       class="btn btn-outline-dark btn-lg social-btn">
+                        <i class="fab fa-whatsapp me-2"></i> WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div> <!-- Closing container -->
+</section> <!-- Closing CEO Quote Section -->
 
 <!-- CTA Section -->
 <section class="py-5" style="background: #F0BB13;">

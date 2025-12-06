@@ -9,14 +9,16 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-10 col-xl-8 text-center text-white">
-                <h1 class="hero-title animate-fade-in">
+                <h1 class="hero-title">
                     Designing Your Brand for<br>
-                    the Market and the Planet.
+                    the Market and <span id="changing-text">the Planet.</span>
                 </h1>
+                
                 <p class="hero-subtitle animate-fade-in-delay">
-                    Powerhand Designs is a Pan-African creative agency crafting sustainable, impactful brand<br>
-                    identities that make businesses unforgettable.
+                    Powerhand Designs is a Pan-African creative agency crafting sustainable,<br>
+                    impactful brand identities that make businesses unforgettable.
                 </p>
+                
                 <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 mt-4 animate-fade-in-delay-2">
                     <a href="{% url 'solutions' %}" class="btn btn-warning btn-lg">
                         Explore Our Solutions
@@ -92,7 +94,7 @@
                 <div class="card p-4 shadow-sm border-0 h-100 solution-card">
                     <div class="card-body">
                         <div class="solution-icon mb-3">
-                            <i class="fas fa-bullseye fa-2x text-warning"></i>
+                            <i class="fas fa-bullseye fa-3x text-warning"></i> <!-- Changed to fa-3x -->
                         </div>
                         <h5 class="card-title fw-bold">Brand Strategy</h5>
                         <p class="card-text">Market research, positioning, naming, tone & messaging built for conversion.</p>
@@ -104,7 +106,7 @@
                 <div class="card p-4 shadow-sm border-0 h-100 solution-card">
                     <div class="card-body">
                         <div class="solution-icon mb-3">
-                            <i class="fas fa-palette fa-2x text-warning"></i>
+                            <i class="fas fa-palette fa-3x text-warning"></i> <!-- Changed to fa-3x -->
                         </div>
                         <h5 class="card-title fw-bold">Identity & Logo</h5>
                         <p class="card-text">Logo systems, brand guidelines, typography and color systems for consistency across touchpoints.</p>
@@ -116,7 +118,7 @@
                 <div class="card p-4 shadow-sm border-0 h-100 solution-card">
                     <div class="card-body">
                         <div class="solution-icon mb-3">
-                            <i class="fas fa-print fa-2x text-warning"></i>
+                            <i class="fas fa-print fa-3x text-warning"></i> <!-- Changed to fa-3x -->
                         </div>
                         <h5 class="card-title fw-bold">Print and Fabrication</h5>
                         <p class="card-text">High-quality printing and fabrication using sustainable materials when possible.</p>
@@ -128,7 +130,7 @@
                 <div class="card p-4 shadow-sm border-0 h-100 solution-card">
                     <div class="card-body">
                         <div class="solution-icon mb-3">
-                            <i class="fas fa-box fa-2x text-warning"></i>
+                            <i class="fas fa-box fa-3x text-warning"></i> <!-- Changed to fa-3x -->
                         </div>
                         <h5 class="card-title fw-bold">Eco Packaging</h5>
                         <p class="card-text">We design product packaging solutions that balance aesthetics, function, and sustainability.</p>
@@ -140,7 +142,7 @@
                 <div class="card p-4 shadow-sm border-0 h-100 solution-card">
                     <div class="card-body">
                         <div class="solution-icon mb-3">
-                            <i class="fas fa-building fa-2x text-warning"></i>
+                            <i class="fas fa-building fa-3x text-warning"></i> <!-- Changed to fa-3x -->
                         </div>
                         <h5 class="card-title fw-bold">Environmental Design</h5>
                         <p class="card-text">Transform your office and event space into a bold, inspiring, and sustainable brand experience.</p>
@@ -152,10 +154,25 @@
                 <div class="card p-4 shadow-sm border-0 h-100 solution-card">
                     <div class="card-body">
                         <div class="solution-icon mb-3">
-                            <i class="fas fa-chalkboard-teacher fa-2x text-warning"></i>
+                            <i class="fas fa-chalkboard-teacher fa-3x text-warning"></i> <!-- Changed to fa-3x -->
                         </div>
                         <h5 class="card-title fw-bold">Workshops & Consultations</h5>
                         <p class="card-text">Empower your team with the mindset and tools to embed sustainability in every design decision.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- POP-UP BANNER SECTION (PDF Feedback Point 2) -->
+        <div class="row mt-5">
+            <div class="col-12 text-center">
+                <div class="popup-banner-container position-relative">
+                    <img src="{% static 'images/BRAND PAW BANNER.png' %}" 
+                         alt="Download Banner" 
+                         class="img-fluid rounded shadow-lg popup-banner"
+                         style="max-width: 100%; height: auto;">
+                    <div class="popup-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                        
                     </div>
                 </div>
             </div>
@@ -187,8 +204,8 @@
             </div>
             <div class="col-md-4">
                 <div class="stat-item">
-                    <h2 class="display-4 fw-bold mb-2">3</h2>
-                    <p class="lead mb-0">Offices Nationwide</p>
+                    <h2 class="display-4 fw-bold mb-2">25+</h2> <!-- Changed from "3" to "25+" -->
+                    <p class="lead mb-0">SMEs Branded Sustainably</p> <!-- Changed from "Offices Nationwide" -->
                 </div>
             </div>
         </div>
@@ -216,29 +233,66 @@
         </div>
         
         <div class="row align-items-center justify-content-center g-4">
+            <!-- Updated with your 12 new logos - Improved sizing -->
             <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center">
-                <img src="{% static 'images/phases-spaces-logo.svg' %}" alt="Phases & Spaces Inc. Logo" class="img-fluid client-logo" style="max-height: 50px;">
+                <div class="client-logo-container">
+                    <img src="{% static 'images/AHDN LOGO.png' %}" alt="AHDN Logo" class="img-fluid client-logo">
+                </div>
             </div>
             <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center">
-                <img src="{% static 'images/schematiq-logo.svg' %}" alt="Schematiq Logo" class="img-fluid client-logo" style="max-height: 50px;">
+                <div class="client-logo-container">
+                    <img src="{% static 'images/BetaDoors.png' %}" alt="BetaDoors Logo" class="img-fluid client-logo">
+                </div>
             </div>
             <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center">
-                <img src="{% static 'images/memento-logo.svg' %}" alt="Memento Logo" class="img-fluid client-logo" style="max-height: 50px;">
+                <div class="client-logo-container">
+                    <img src="{% static 'images/Gwarimpa.png' %}" alt="Gwarimpa Logo" class="img-fluid client-logo">
+                </div>
             </div>
             <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center">
-                <img src="{% static 'images/sprig-sky-logo.svg' %}" alt="Sprig & Sky Logo" class="img-fluid client-logo" style="max-height: 50px;">
+                <div class="client-logo-container">
+                    <img src="{% static 'images/HDInc Logo Official.png' %}" alt="HDInc Logo" class="img-fluid client-logo">
+                </div>
             </div>
             <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center">
-                <img src="{% static 'images/chapter-co-books-logo.svg' %}" alt="Chapter & Co Books Logo" class="img-fluid client-logo" style="max-height: 50px;">
+                <div class="client-logo-container">
+                    <img src="{% static 'images/Hibare.png' %}" alt="Hibare Logo" class="img-fluid client-logo">
+                </div>
             </div>
             <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center">
-                <img src="{% static 'images/cura-aid-logo.svg' %}" alt="CuraAid+ Logo" class="img-fluid client-logo" style="max-height: 50px;">
+                <div class="client-logo-container">
+                    <img src="{% static 'images/Payed Logo-10.png' %}" alt="Payed Logo" class="img-fluid client-logo">
+                </div>
             </div>
             <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center">
-                <img src="{% static 'images/crowd-zero-logo.svg' %}" alt="Crowd Zero Logo" class="img-fluid client-logo" style="max-height: 50px;">
+                <div class="client-logo-container">
+                    <img src="{% static 'images/ph.png' %}" alt="PH Logo" class="img-fluid client-logo">
+                </div>
             </div>
             <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center">
-                <img src="{% static 'images/wilderness-watchers-logo.svg' %}" alt="Wilderness Watchers Foundation Logo" class="img-fluid client-logo" style="max-height: 50px;">
+                <div class="client-logo-container">
+                    <img src="{% static 'images/Rivexcel.png' %}" alt="Rivexcel Logo" class="img-fluid client-logo">
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center">
+                <div class="client-logo-container">
+                    <img src="{% static 'images/Transparent LOGO Purple.png' %}" alt="Purple Logo" class="img-fluid client-logo">
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center">
+                <div class="client-logo-container">
+                    <img src="{% static 'images/VA.png' %}" alt="VA Logo" class="img-fluid client-logo">
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center">
+                <div class="client-logo-container">
+                    <img src="{% static 'images/vb.png' %}" alt="VB Logo" class="img-fluid client-logo">
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center">
+                <div class="client-logo-container">
+                    <img src="{% static 'images/Wura.png' %}" alt="Wura Logo" class="img-fluid client-logo">
+                </div>
             </div>
         </div>
         
@@ -262,4 +316,107 @@
         </div>
     </div>
 </section>
+
+<!-- Popup Banner Modal - LOGO IMAGE 100% FILL -->
+<div class="modal fade" id="bannerModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-fullscreen">
+        <div class="modal-content border-0 bg-transparent">
+            <div class="modal-body p-0 d-flex align-items-center justify-content-center">
+                <button type="button" class="btn-close position-absolute top-0 end-0 m-3 bg-white rounded-circle p-2 z-3" 
+                        data-bs-dismiss="modal" aria-label="Close"></button>
+                
+                <!-- 100% FULL LOGO IMAGE -->
+                <div class="w-100 h-100 d-flex align-items-center justify-content-center">
+                    <img src="{% static 'images/BRAND PAW BANNER.png' %}" 
+                         alt="BrandPaw - Eco-Smart Branding for African SMEs" 
+                         class="img-fluid h-100 w-auto" 
+                         style="max-width: 90%; max-height: 90vh; object-fit: contain;">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // ========================================
+        // TYPING EFFECT: "the Planet" ⇄ "Impact" (INFINITE LOOP)
+        // ========================================
+        const changingText = document.getElementById('changing-text');
+        
+        if (changingText) {
+            const planetText = 'the Planet.';
+            const impactText = 'Impact.';
+            
+            let isDeleting = false;
+            let isImpact = false;
+            let currentText = planetText;
+            let charIndex = planetText.length;
+            
+            function type() {
+                const targetText = isImpact ? impactText : planetText;
+                
+                if (!isDeleting && charIndex === targetText.length) {
+                    // Remove blinking cursor but KEEP yellow color for Impact
+                    changingText.style.borderRight = 'none';
+                    
+                    // Wait 5 seconds before backspacing
+                    setTimeout(() => {
+                        // Add cursor back before deleting
+                        if (isImpact) {
+                            changingText.style.borderRight = '3px solid #F0BB13';
+                        }
+                        isDeleting = true;
+                        type();
+                    }, 5000); // 5 second pause
+                    return;
+                }
+                
+                if (isDeleting) {
+                    currentText = targetText.substring(0, charIndex);
+                    charIndex--;
+                    changingText.textContent = currentText;
+                    
+                    if (charIndex === 0) {
+                        isDeleting = false;
+                        isImpact = !isImpact;
+                        charIndex = 0;
+                        
+                        // Change text color based on which word we're typing
+                        if (isImpact) {
+                            changingText.style.color = '#F0BB13'; // Yellow for Impact
+                            changingText.style.borderRight = '3px solid #F0BB13';
+                        } else {
+                            changingText.style.color = 'white'; // White for the Planet
+                            changingText.style.borderRight = 'none';
+                        }
+                        
+                        setTimeout(() => type(), 300);
+                        return;
+                    }
+                    
+                    setTimeout(type, 80);
+                } else {
+                    // Typing animation
+                    if (charIndex < targetText.length) {
+                        currentText = targetText.substring(0, charIndex + 1);
+                        changingText.textContent = currentText;
+                        charIndex++;
+                        setTimeout(type, 120);
+                    }
+                }
+            }
+            
+            // Start after 1.5 seconds
+            setTimeout(type, 1500);
+        }
+        
+        // ========================================
+        // AUTO-SHOW POPUP BANNER
+        // ========================================
+        setTimeout(function() {
+            var bannerModal = new bootstrap.Modal(document.getElementById('bannerModal'));
+            bannerModal.show();
+        }, 10000);
+    });
+</script>
 {% endblock %}
