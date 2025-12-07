@@ -38,6 +38,7 @@ class ContactForm(forms.ModelForm):
         self.fields['name'].required = True
         self.fields['email'].required = True
         self.fields['phone'].required = True
+        self.fields['subject'].required = True
         self.fields['message'].required = True
     
     def clean_phone(self):

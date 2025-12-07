@@ -4,10 +4,17 @@ from django.core.validators import RegexValidator
 
 class ContactSubmission(models.Model):
     SUBJECT_CHOICES = [
-        ('general', 'General Inquiry'),
-        ('branding', 'Branding Project'),
-        ('packaging', 'Packaging Design'),
-        ('consultation', 'Consultation'),
+        ('', 'Select a service...'),
+        ('brand_strategy', 'Brand Strategy'),
+        ('identity_logo_design', 'Identity & Logo Design'),
+        ('print_fabrication', 'Print & Fabrication'),
+        ('eco_packaging', 'Eco Packaging Design'),
+        ('environmental_design', 'Environmental Design'),
+        ('workshops_consultations', 'Workshops & Consultations'),
+        ('digital_marketing', 'Digital Marketing'),
+        ('sustainable_website', 'Sustainable Website Development'),
+        ('multiple_services', 'Multiple Services'),
+        ('general_inquiry', 'General Inquiry'),
     ]
     
     name = models.CharField(max_length=200)
@@ -17,7 +24,7 @@ class ContactSubmission(models.Model):
         validators=[RegexValidator(regex=r'^\+?1?\d{9,15}$', message="Phone number must be entered in the format: '+999999999'. Up to 15 digits allowed.")]
     )
     company = models.CharField(max_length=200, blank=True)
-    subject = models.CharField(max_length=50, choices=SUBJECT_CHOICES, default='general')
+    subject = models.CharField(max_length=50, choices=SUBJECT_CHOICES, default='')
     message = models.TextField()
     submitted_at = models.DateTimeField(auto_now_add=True)
     
@@ -27,7 +34,7 @@ class ContactSubmission(models.Model):
         verbose_name_plural = 'Contact Submissions'
     
     def __str__(self):
-        return f"{self.name} - {self.subject}"
+        return f"{self.name} - {self.get_subject_display()}"
 
 class Project(models.Model):
     CATEGORY_CHOICES = [

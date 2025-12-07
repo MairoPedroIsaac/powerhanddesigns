@@ -14,164 +14,356 @@
                     We offer end-to-end branding and design services that transform businesses<br>
                     into unforgettable brands with sustainability at their core.
                 </p>
+                <p class="lead mb-4">
+                    <small>Click on any service below to view detailed information</small>
+                </p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Solutions Grid -->
+<!-- Solutions Accordion -->
 <section class="py-5 bg-light">
     <div class="container">
-        <div class="row g-5">
-            
-            <!-- Brand Strategy -->
-            <div class="col-lg-6">
-                <div class="solution-detail-card h-100">
-                    <div class="solution-number">01</div>
-                    <div class="solution-icon-large mb-4">
-                        <i class="fas fa-bullseye"></i>
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="accordion" id="solutionsAccordion">
+                    
+                    <!-- Brand Strategy -->
+                    <div class="accordion-item solution-accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                <div class="d-flex align-items-center w-100">
+                                    <div class="accordion-number me-3">01</div>
+                                    <div class="accordion-icon me-3">
+                                        <i class="fas fa-bullseye"></i>
+                                    </div>
+                                    <div class="accordion-title">Brand Strategy</div>
+                                    <div class="accordion-arrow ms-auto">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                </div>
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#solutionsAccordion">
+                            <div class="accordion-body">
+                                <div class="row">
+                                    <div class="col-lg-8">
+                                        <p class="solution-detail-description">
+                                            Build a foundation that drives business growth and market differentiation. Our strategic approach ensures your brand connects authentically with your target audience.
+                                        </p>
+                                        <ul class="solution-features">
+                                            <li><i class="fas fa-check-circle"></i> Market Research & Analysis</li>
+                                            <li><i class="fas fa-check-circle"></i> Competitive Positioning</li>
+                                            <li><i class="fas fa-check-circle"></i> Brand Naming & Messaging</li>
+                                            <li><i class="fas fa-check-circle"></i> Target Audience Profiling</li>
+                                            <li><i class="fas fa-check-circle"></i> Brand Architecture</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-4 text-end">
+                                        <div class="solution-cta mt-4">
+                                            <a href="{% url 'contact' %}" class="btn btn-warning">Get Started</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="solution-detail-title">Brand Strategy</h3>
-                    <p class="solution-detail-description">
-                        Build a foundation that drives business growth and market differentiation. Our strategic approach ensures your brand connects authentically with your target audience.
-                    </p>
-                    <ul class="solution-features">
-                        <li><i class="fas fa-check-circle"></i> Market Research & Analysis</li>
-                        <li><i class="fas fa-check-circle"></i> Competitive Positioning</li>
-                        <li><i class="fas fa-check-circle"></i> Brand Naming & Messaging</li>
-                        <li><i class="fas fa-check-circle"></i> Target Audience Profiling</li>
-                        <li><i class="fas fa-check-circle"></i> Brand Architecture</li>
-                    </ul>
-                    <div class="solution-cta mt-4">
-                        <a href="{% url 'contact' %}" class="btn btn-warning">Get Started</a>
+
+                    <!-- Identity & Logo Design -->
+                    <div class="accordion-item solution-accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <div class="d-flex align-items-center w-100">
+                                    <div class="accordion-number me-3">02</div>
+                                    <div class="accordion-icon me-3">
+                                        <i class="fas fa-palette"></i>
+                                    </div>
+                                    <div class="accordion-title">Identity & Logo Design</div>
+                                    <div class="accordion-arrow ms-auto">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                </div>
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#solutionsAccordion">
+                            <div class="accordion-body">
+                                <div class="row">
+                                    <div class="col-lg-8">
+                                        <p class="solution-detail-description">
+                                            Create a visual identity that tells your brand story at a glance. From logos to complete visual systems, we craft memorable designs that work across all touchpoints.
+                                        </p>
+                                        <ul class="solution-features">
+                                            <li><i class="fas fa-check-circle"></i> Custom Logo Design</li>
+                                            <li><i class="fas fa-check-circle"></i> Brand Guidelines & Style Guide</li>
+                                            <li><i class="fas fa-check-circle"></i> Typography System</li>
+                                            <li><i class="fas fa-check-circle"></i> Color Palette Development</li>
+                                            <li><i class="fas fa-check-circle"></i> Visual Assets Library</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-4 text-end">
+                                        <div class="solution-cta mt-4">
+                                            <a href="{% url 'contact' %}" class="btn btn-warning">Get Started</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
+                    <!-- Print & Fabrication -->
+                    <div class="accordion-item solution-accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                <div class="d-flex align-items-center w-100">
+                                    <div class="accordion-number me-3">03</div>
+                                    <div class="accordion-icon me-3">
+                                        <i class="fas fa-print"></i>
+                                    </div>
+                                    <div class="accordion-title">Print & Fabrication</div>
+                                    <div class="accordion-arrow ms-auto">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                </div>
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#solutionsAccordion">
+                            <div class="accordion-body">
+                                <div class="row">
+                                    <div class="col-lg-8">
+                                        <p class="solution-detail-description">
+                                            Bring your brand to life through high-quality printed materials. We prioritize sustainable materials and production methods without compromising on quality.
+                                        </p>
+                                        <ul class="solution-features">
+                                            <li><i class="fas fa-check-circle"></i> Business Cards & Stationery</li>
+                                            <li><i class="fas fa-check-circle"></i> Brochures & Catalogs</li>
+                                            <li><i class="fas fa-check-circle"></i> Signage & Banners</li>
+                                            <li><i class="fas fa-check-circle"></i> Promotional Materials</li>
+                                            <li><i class="fas fa-check-circle"></i> Sustainable Print Options</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-4 text-end">
+                                        <div class="solution-cta mt-4">
+                                            <a href="{% url 'contact' %}" class="btn btn-warning">Get Started</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Eco Packaging Design -->
+                    <div class="accordion-item solution-accordion-item">
+                        <h2 class="accordion-header" id="headingFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                <div class="d-flex align-items-center w-100">
+                                    <div class="accordion-number me-3">04</div>
+                                    <div class="accordion-icon me-3">
+                                        <i class="fas fa-box"></i>
+                                    </div>
+                                    <div class="accordion-title">Eco Packaging Design</div>
+                                    <div class="accordion-arrow ms-auto">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                </div>
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#solutionsAccordion">
+                            <div class="accordion-body">
+                                <div class="row">
+                                    <div class="col-lg-8">
+                                        <p class="solution-detail-description">
+                                            Design packaging that protects your products and the planet. We create beautiful, functional packaging using eco-friendly materials and innovative design solutions.
+                                        </p>
+                                        <ul class="solution-features">
+                                            <li><i class="fas fa-check-circle"></i> Sustainable Material Selection</li>
+                                            <li><i class="fas fa-check-circle"></i> Product Packaging Design</li>
+                                            <li><i class="fas fa-check-circle"></i> Structural Design & Prototyping</li>
+                                            <li><i class="fas fa-check-circle"></i> Label & Tag Design</li>
+                                            <li><i class="fas fa-check-circle"></i> Recyclable & Biodegradable Options</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-4 text-end">
+                                        <div class="solution-cta mt-4">
+                                            <a href="{% url 'contact' %}" class="btn btn-warning">Get Started</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Environmental Design -->
+                    <div class="accordion-item solution-accordion-item">
+                        <h2 class="accordion-header" id="headingFive">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                <div class="d-flex align-items-center w-100">
+                                    <div class="accordion-number me-3">05</div>
+                                    <div class="accordion-icon me-3">
+                                        <i class="fas fa-building"></i>
+                                    </div>
+                                    <div class="accordion-title">Environmental Design</div>
+                                    <div class="accordion-arrow ms-auto">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                </div>
+                            </button>
+                        </h2>
+                        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#solutionsAccordion">
+                            <div class="accordion-body">
+                                <div class="row">
+                                    <div class="col-lg-8">
+                                        <p class="solution-detail-description">
+                                            Transform physical spaces into immersive brand experiences. From office interiors to event installations, we create environments that inspire and engage.
+                                        </p>
+                                        <ul class="solution-features">
+                                            <li><i class="fas fa-check-circle"></i> Office Branding & Interiors</li>
+                                            <li><i class="fas fa-check-circle"></i> Retail Space Design</li>
+                                            <li><i class="fas fa-check-circle"></i> Exhibition & Trade Show Design</li>
+                                            <li><i class="fas fa-check-circle"></i> Wayfinding Systems</li>
+                                            <li><i class="fas fa-check-circle"></i> Event Space Installations</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-4 text-end">
+                                        <div class="solution-cta mt-4">
+                                            <a href="{% url 'contact' %}" class="btn btn-warning">Get Started</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Workshops & Consultations -->
+                    <div class="accordion-item solution-accordion-item">
+                        <h2 class="accordion-header" id="headingSix">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                <div class="d-flex align-items-center w-100">
+                                    <div class="accordion-number me-3">06</div>
+                                    <div class="accordion-icon me-3">
+                                        <i class="fas fa-chalkboard-teacher"></i>
+                                    </div>
+                                    <div class="accordion-title">Workshops & Consultations</div>
+                                    <div class="accordion-arrow ms-auto">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                </div>
+                            </button>
+                        </h2>
+                        <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#solutionsAccordion">
+                            <div class="accordion-body">
+                                <div class="row">
+                                    <div class="col-lg-8">
+                                        <p class="solution-detail-description">
+                                            Empower your team with knowledge and tools to maintain brand excellence. We offer training sessions and strategic consultations tailored to your needs.
+                                        </p>
+                                        <ul class="solution-features">
+                                            <li><i class="fas fa-check-circle"></i> Brand Strategy Workshops</li>
+                                            <li><i class="fas fa-check-circle"></i> Sustainable Design Training</li>
+                                            <li><i class="fas fa-check-circle"></i> Team Brand Alignment Sessions</li>
+                                            <li><i class="fas fa-check-circle"></i> Design Thinking Workshops</li>
+                                            <li><i class="fas fa-check-circle"></i> Ongoing Brand Consultations</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-4 text-end">
+                                        <div class="solution-cta mt-4">
+                                            <a href="{% url 'contact' %}" class="btn btn-warning">Get Started</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Digital Marketing -->
+                    <div class="accordion-item solution-accordion-item">
+                        <h2 class="accordion-header" id="headingSeven">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                <div class="d-flex align-items-center w-100">
+                                    <div class="accordion-number me-3">07</div>
+                                    <div class="accordion-icon me-3">
+                                        <i class="fas fa-chart-line"></i>
+                                    </div>
+                                    <div class="accordion-title">Digital Marketing</div>
+                                    <div class="accordion-arrow ms-auto">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                </div>
+                            </button>
+                        </h2>
+                        <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#solutionsAccordion">
+                            <div class="accordion-body">
+                                <div class="row">
+                                    <div class="col-lg-8">
+                                        <p class="solution-detail-description">
+                                            Data-driven digital marketing strategies that help SMEs grow their online presence and drive measurable results. We combine creativity with analytics to maximize your ROI.
+                                        </p>
+                                        <ul class="solution-features">
+                                            <li><i class="fas fa-check-circle"></i> Social Media Management</li>
+                                            <li><i class="fas fa-check-circle"></i> Content Creation & Strategy</li>
+                                            <li><i class="fas fa-check-circle"></i> Campaign Strategy & Analytics</li>
+                                            <li><i class="fas fa-check-circle"></i> Email Marketing Automation</li>
+                                            <li><i class="fas fa-check-circle"></i> Performance Tracking & Reporting</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-4 text-end">
+                                        <div class="solution-cta mt-4">
+                                            <a href="{% url 'contact' %}" class="btn btn-warning">Get Started</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sustainable Website Development -->
+                    <div class="accordion-item solution-accordion-item">
+                        <h2 class="accordion-header" id="headingEight">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                                <div class="d-flex align-items-center w-100">
+                                    <div class="accordion-number me-3">08</div>
+                                    <div class="accordion-icon me-3">
+                                        <i class="fas fa-leaf"></i>
+                                    </div>
+                                    <div class="accordion-title">Sustainable Website Development</div>
+                                    <div class="accordion-arrow ms-auto">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                </div>
+                            </button>
+                        </h2>
+                        <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#solutionsAccordion">
+                            <div class="accordion-body">
+                                <div class="row">
+                                    <div class="col-lg-8">
+                                        <p class="solution-detail-description">
+                                            Fast, lightweight, energy-efficient websites designed to reduce digital carbon footprint while delivering exceptional user experience and performance.
+                                        </p>
+                                        <ul class="solution-features">
+                                            <li><i class="fas fa-check-circle"></i> UX/UI Design</li>
+                                            <li><i class="fas fa-check-circle"></i> Sustainable Green Hosting</li>
+                                            <li><i class="fas fa-check-circle"></i> SEO Optimization</li>
+                                            <li><i class="fas fa-check-circle"></i> Fast-loading Website Builds</li>
+                                            <li><i class="fas fa-check-circle"></i> Carbon Footprint Monitoring</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-4 text-end">
+                                        <div class="solution-cta mt-4">
+                                            <a href="{% url 'contact' %}" class="btn btn-warning">Get Started</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-
-            <!-- Identity & Logo Design -->
-            <div class="col-lg-6">
-                <div class="solution-detail-card h-100">
-                    <div class="solution-number">02</div>
-                    <div class="solution-icon-large mb-4">
-                        <i class="fas fa-palette"></i>
-                    </div>
-                    <h3 class="solution-detail-title">Identity & Logo Design</h3>
-                    <p class="solution-detail-description">
-                        Create a visual identity that tells your brand story at a glance. From logos to complete visual systems, we craft memorable designs that work across all touchpoints.
-                    </p>
-                    <ul class="solution-features">
-                        <li><i class="fas fa-check-circle"></i> Custom Logo Design</li>
-                        <li><i class="fas fa-check-circle"></i> Brand Guidelines & Style Guide</li>
-                        <li><i class="fas fa-check-circle"></i> Typography System</li>
-                        <li><i class="fas fa-check-circle"></i> Color Palette Development</li>
-                        <li><i class="fas fa-check-circle"></i> Visual Assets Library</li>
-                    </ul>
-                    <div class="solution-cta mt-4">
-                        <a href="{% url 'contact' %}" class="btn btn-warning">Get Started</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Print & Fabrication -->
-            <div class="col-lg-6">
-                <div class="solution-detail-card h-100">
-                    <div class="solution-number">03</div>
-                    <div class="solution-icon-large mb-4">
-                        <i class="fas fa-print"></i>
-                    </div>
-                    <h3 class="solution-detail-title">Print & Fabrication</h3>
-                    <p class="solution-detail-description">
-                        Bring your brand to life through high-quality printed materials. We prioritize sustainable materials and production methods without compromising on quality.
-                    </p>
-                    <ul class="solution-features">
-                        <li><i class="fas fa-check-circle"></i> Business Cards & Stationery</li>
-                        <li><i class="fas fa-check-circle"></i> Brochures & Catalogs</li>
-                        <li><i class="fas fa-check-circle"></i> Signage & Banners</li>
-                        <li><i class="fas fa-check-circle"></i> Promotional Materials</li>
-                        <li><i class="fas fa-check-circle"></i> Sustainable Print Options</li>
-                    </ul>
-                    <div class="solution-cta mt-4">
-                        <a href="{% url 'contact' %}" class="btn btn-warning">Get Started</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Eco Packaging -->
-            <div class="col-lg-6">
-                <div class="solution-detail-card h-100">
-                    <div class="solution-number">04</div>
-                    <div class="solution-icon-large mb-4">
-                        <i class="fas fa-box"></i>
-                    </div>
-                    <h3 class="solution-detail-title">Eco Packaging Design</h3>
-                    <p class="solution-detail-description">
-                        Design packaging that protects your products and the planet. We create beautiful, functional packaging using eco-friendly materials and innovative design solutions.
-                    </p>
-                    <ul class="solution-features">
-                        <li><i class="fas fa-check-circle"></i> Sustainable Material Selection</li>
-                        <li><i class="fas fa-check-circle"></i> Product Packaging Design</li>
-                        <li><i class="fas fa-check-circle"></i> Structural Design & Prototyping</li>
-                        <li><i class="fas fa-check-circle"></i> Label & Tag Design</li>
-                        <li><i class="fas fa-check-circle"></i> Recyclable & Biodegradable Options</li>
-                    </ul>
-                    <div class="solution-cta mt-4">
-                        <a href="{% url 'contact' %}" class="btn btn-warning">Get Started</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Environmental Design -->
-            <div class="col-lg-6">
-                <div class="solution-detail-card h-100">
-                    <div class="solution-number">05</div>
-                    <div class="solution-icon-large mb-4">
-                        <i class="fas fa-building"></i>
-                    </div>
-                    <h3 class="solution-detail-title">Environmental Design</h3>
-                    <p class="solution-detail-description">
-                        Transform physical spaces into immersive brand experiences. From office interiors to event installations, we create environments that inspire and engage.
-                    </p>
-                    <ul class="solution-features">
-                        <li><i class="fas fa-check-circle"></i> Office Branding & Interiors</li>
-                        <li><i class="fas fa-check-circle"></i> Retail Space Design</li>
-                        <li><i class="fas fa-check-circle"></i> Exhibition & Trade Show Design</li>
-                        <li><i class="fas fa-check-circle"></i> Wayfinding Systems</li>
-                        <li><i class="fas fa-check-circle"></i> Event Space Installations</li>
-                    </ul>
-                    <div class="solution-cta mt-4">
-                        <a href="{% url 'contact' %}" class="btn btn-warning">Get Started</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Workshops & Consultations -->
-            <div class="col-lg-6">
-                <div class="solution-detail-card h-100">
-                    <div class="solution-number">06</div>
-                    <div class="solution-icon-large mb-4">
-                        <i class="fas fa-chalkboard-teacher"></i>
-                    </div>
-                    <h3 class="solution-detail-title">Workshops & Consultations</h3>
-                    <p class="solution-detail-description">
-                        Empower your team with knowledge and tools to maintain brand excellence. We offer training sessions and strategic consultations tailored to your needs.
-                    </p>
-                    <ul class="solution-features">
-                        <li><i class="fas fa-check-circle"></i> Brand Strategy Workshops</li>
-                        <li><i class="fas fa-check-circle"></i> Sustainable Design Training</li>
-                        <li><i class="fas fa-check-circle"></i> Team Brand Alignment Sessions</li>
-                        <li><i class="fas fa-check-circle"></i> Design Thinking Workshops</li>
-                        <li><i class="fas fa-check-circle"></i> Ongoing Brand Consultations</li>
-                    </ul>
-                    <div class="solution-cta mt-4">
-                        <a href="{% url 'contact' %}" class="btn btn-warning">Get Started</a>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </div>
 </section>
 
+<!-- Keep the rest of your sections as they are -->
 <!-- Process Section -->
 <section class="py-5 bg-white">
     <div class="container">

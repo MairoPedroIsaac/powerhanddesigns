@@ -72,11 +72,14 @@
                         {{ form.company }}
                     </div>
                     
-                    <!-- Subject -->
-                    <div class="col-12">
-                        <label for="id_subject" class="form-label">What are you interested in?</label>
-                        {{ form.subject }}
-                    </div>
+                    <!-- Service Interest -->
+<div class="col-12">
+    <label for="id_subject" class="form-label">What are you interested in? *</label>
+    {{ form.subject }}
+    {% if form.subject.errors %}
+        <div class="text-danger small">{{ form.subject.errors }}</div>
+    {% endif %}
+</div>
                     
                     <!-- Message -->
                     <div class="col-12">
@@ -111,7 +114,6 @@
                         </div>
                         <div>
                             <h5 class="fw-bold mb-1">Email Us</h5>
-                            <p class="text-muted mb-0">hello@powerhanddesigns.com</p>
                             <p class="text-muted mb-0">info@powerhanddesigns.com</p>
                         </div>
                     </div>
@@ -123,20 +125,30 @@
                         </div>
                         <div>
                             <h5 class="fw-bold mb-1">Call Us</h5>
-                            <p class="text-muted mb-0">+1 (234) 567-8900</p>
+                            <p class="text-muted mb-0">+234 (703) 9053 411</p>
                             <p class="text-muted mb-0">Mon - Fri, 9am - 6pm</p>
                         </div>
                     </div>
 
                     <!-- Contact Item 3 -->
+                       <div class="contact-item d-flex mb-4">
+    <div class="contact-icon bg-warning rounded-circle d-flex align-items-center justify-content-center me-4">
+        <i class="fas fa-map-marker-alt text-white"></i>
+    </div>
+    <div>
+        <h5 class="fw-bold mb-1">Portharcourt Address</h5>
+        <p class="text-muted mb-0">No 9 Eke Street off NTA Rd,<br>Port Harcourt, Rivers State, Nigeria.</p>
+    </div>
+</div>
+                      
+                    <!-- Contact Item 4 -->
                     <div class="contact-item d-flex mb-4">
                         <div class="contact-icon bg-warning rounded-circle d-flex align-items-center justify-content-center me-4">
                             <i class="fas fa-map-marker-alt text-white"></i>
                         </div>
                         <div>
-                            <h5 class="fw-bold mb-1">Visit Us</h5>
-                            <p class="text-muted mb-0">Pan-African Creative Agency</p>
-                            <p class="text-muted mb-0">Available across Africa</p>
+                            <h5 class="fw-bold mb-1">Kigali Address</h5>
+                            <p class="text-muted mb-0">KG 128 ST Zindiro,<br>Kigali, Rwanda.</p>
                         </div>
                     </div>
 

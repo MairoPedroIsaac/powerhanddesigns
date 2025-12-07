@@ -2466,3 +2466,248 @@ html {
     padding-left: 10px !important;
     padding-right: 10px !important;
 }
+
+/* ===================================
+   NEW SOLUTIONS STYLES FOR ADDED SERVICES
+   =================================== */
+
+/* Fix for Digital Marketing icon color */
+.solution-detail-card:nth-child(7) .solution-icon-large i.fa-chart-line {
+    color: #000000 !important;
+}
+
+/* Fix for Sustainable Website Development icon color */
+.solution-detail-card:nth-child(8) .solution-icon-large i.fa-leaf {
+    color: #000000 !important;
+}
+
+/* Animation delays for new cards */
+.solution-detail-card:nth-child(7) { animation-delay: 0.7s; }
+.solution-detail-card:nth-child(8) { animation-delay: 0.8s; }
+
+/* Responsive adjustments for 8 cards */
+@media (max-width: 992px) {
+    .solution-detail-card {
+        margin-bottom: 30px;
+    }
+}
+
+/* Ensure all solution icons are properly colored */
+.solution-icon-large i {
+    color: #000000 !important;
+}
+
+/* ===================================
+   SOLUTIONS ACCORDION STYLES
+   =================================== */
+
+/* Accordion Container */
+#solutionsAccordion {
+    border: none;
+    background: transparent;
+}
+
+/* Individual Accordion Items */
+.solution-accordion-item {
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px !important;
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.solution-accordion-item:hover {
+    border-color: #F0BB13;
+    box-shadow: 0 8px 25px rgba(240, 187, 19, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Accordion Button */
+.solution-accordion-item .accordion-button {
+    background: white;
+    border: none;
+    padding: 25px 30px;
+    font-size: 1.1rem;
+    color: #000000;
+    box-shadow: none !important;
+    border-radius: 12px 12px 0 0 !important;
+}
+
+.solution-accordion-item .accordion-button:not(.collapsed) {
+    background: white;
+    color: #000000;
+    border-bottom: 2px solid #F0BB13;
+}
+
+.solution-accordion-item .accordion-button:focus {
+    box-shadow: none !important;
+    border-color: #F0BB13;
+}
+
+/* Accordion Number */
+.accordion-number {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #F0BB13, #ffd54f);
+    color: #000000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 800;
+    flex-shrink: 0;
+}
+
+/* Accordion Icon */
+.accordion-icon {
+    width: 50px;
+    height: 50px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.accordion-icon i {
+    font-size: 1.5rem;
+    color: #000000;
+}
+
+.solution-accordion-item .accordion-button:not(.collapsed) .accordion-icon {
+    background: linear-gradient(135deg, #F0BB13, #ffd54f);
+}
+
+/* Accordion Title */
+.accordion-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #000000;
+    margin-left: 10px;
+}
+
+/* Accordion Arrow */
+.accordion-arrow i {
+    font-size: 1.2rem;
+    color: #666;
+    transition: transform 0.3s ease;
+}
+
+.solution-accordion-item .accordion-button:not(.collapsed) .accordion-arrow i {
+    transform: rotate(180deg);
+    color: #F0BB13;
+}
+
+/* Accordion Body */
+.solution-accordion-item .accordion-body {
+    padding: 30px;
+    background: #fafafa;
+    border-top: 1px solid #f0f0f0;
+}
+
+/* Keep existing solution styles */
+.solution-features {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0 0;
+}
+
+.solution-features li {
+    padding: 10px 0;
+    color: #444;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+}
+
+.solution-features li:last-child {
+    border-bottom: none;
+}
+
+.solution-features li i {
+    color: #F0BB13;
+    margin-right: 12px;
+    font-size: 1.1rem;
+}
+
+.solution-detail-description {
+    color: #666;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.solution-cta .btn-warning {
+    padding: 12px 35px;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.solution-cta .btn-warning:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(240, 187, 19, 0.4);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .solution-accordion-item .accordion-button {
+        padding: 20px;
+    }
+    
+    .accordion-icon {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .accordion-icon i {
+        font-size: 1.3rem;
+    }
+    
+    .accordion-title {
+        font-size: 1.1rem;
+        margin-left: 5px;
+    }
+    
+    .solution-accordion-item .accordion-body {
+        padding: 20px;
+    }
+    
+    .solution-features li {
+        font-size: 0.95rem;
+    }
+    
+    .solution-detail-description {
+        font-size: 1rem;
+    }
+    
+    .solution-cta .btn-warning {
+        padding: 10px 25px;
+        width: 100%;
+    }
+    
+    .accordion-number {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+}
+
+/* Animation for accordion opening */
+.accordion-collapse {
+    transition: all 0.3s ease;
+}
+
+/* Multiple open functionality */
+.accordion-button::after {
+    display: none; /* Hide Bootstrap's default arrow */
+}
+
+/* Optional: Allow multiple accordions to be open at once */
+/* Remove data-bs-parent="#solutionsAccordion" from all collapse divs if you want multiple open */
+
