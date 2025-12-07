@@ -449,6 +449,19 @@ html {
     transform: scale(1.02);
 }
 
+/* Square About Image - NO HOVER EFFECT */
+.about-image-container-square {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.about-image-container-square img {
+    border: 3px solid white;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    /* NO HOVER EFFECT - removed transform */
+}
+
 /* Bullet points styling */
 .bullet-point {
     width: 8px;
@@ -579,49 +592,82 @@ html {
 }
 
 /* ===================================
-   ENHANCED CLIENT LOGOS SECTION
+   CLEAN CLIENT LOGOS SECTION - SIMPLE & VISIBLE
    =================================== */
 #clients-section {
-    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    background: #ffffff !important; /* Pure white background */
     position: relative;
 }
 
 #clients-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, transparent, #F0BB13, transparent);
+    display: none; /* Remove gradient line */
 }
 
-.client-logo {
-    opacity: 0.6;
-    filter: grayscale(100%) brightness(0.9);
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    padding: 20px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+/* Clean logo container */
+.client-logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    background: #ffffff;
+    height: 150px; /* Big fixed height for larger logos */
 }
 
-.client-logo:hover {
-    opacity: 1;
-    filter: grayscale(0%) brightness(1);
-    transform: scale(1.15) translateY(-5px);
-    box-shadow: 0 15px 35px rgba(240, 187, 19, 0.25);
-    background: linear-gradient(135deg, #ffffff 0%, #fffbf0 100%);
+/* Big, clean logo images */
+.client-logo-container img {
+    max-height: 90px !important; /* Much bigger logos */
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: none !important;
+    opacity: 1 !important;
 }
 
-/* Add golden glow on hover */
-@keyframes goldenGlow {
-    0%, 100% { box-shadow: 0 15px 35px rgba(240, 187, 19, 0.25); }
-    50% { box-shadow: 0 15px 45px rgba(240, 187, 19, 0.4); }
+/* REMOVE ALL HOVER EFFECTS */
+.client-logo-container:hover {
+    transform: none !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
 }
 
-.client-logo:hover {
-    animation: goldenGlow 2s infinite;
+.client-logo-container:hover img {
+    transform: none !important;
+    filter: none !important;
+}
+
+/* Responsive sizing */
+@media (max-width: 992px) {
+    .client-logo-container {
+        height: 130px;
+        padding: 35px 15px;
+    }
+    
+    .client-logo-container img {
+        max-height: 80px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .client-logo-container {
+        height: 110px;
+        padding: 30px 10px;
+    }
+    
+    .client-logo-container img {
+        max-height: 70px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .client-logo-container {
+        height: 90px;
+        padding: 20px 10px;
+    }
+    
+    .client-logo-container img {
+        max-height: 60px !important;
+    }
 }
 
 /* ===================================
@@ -1963,76 +2009,6 @@ html {
 }
 
 /* ===================================
-   ENHANCED CLIENT LOGOS - BIGGER & BOLDER
-   =================================== */
-.client-logo-container {
-    padding: 25px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 120px; /* Fixed height for consistency */
-}
-
-.client-logo {
-    max-height: 70px !important; /* Bigger logos */
-    max-width: 100%;
-    width: auto;
-    filter: grayscale(100%) brightness(0.7);
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    opacity: 0.8;
-}
-
-.client-logo-container:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(240, 187, 19, 0.3);
-    background: linear-gradient(135deg, #ffffff 0%, #fffbf0 100%);
-    border: 2px solid #F0BB13;
-}
-
-.client-logo-container:hover .client-logo {
-    filter: grayscale(0%) brightness(1);
-    opacity: 1;
-    transform: scale(1.15);
-}
-
-/* Golden glow animation on hover */
-@keyframes goldenGlow {
-    0%, 100% { box-shadow: 0 20px 40px rgba(240, 187, 19, 0.3); }
-    50% { box-shadow: 0 20px 50px rgba(240, 187, 19, 0.5); }
-}
-
-.client-logo-container:hover {
-    animation: goldenGlow 2s infinite;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .client-logo-container {
-        padding: 20px;
-        height: 100px;
-    }
-    
-    .client-logo {
-        max-height: 60px !important;
-    }
-}
-
-@media (max-width: 576px) {
-    .client-logo-container {
-        padding: 15px;
-        height: 90px;
-    }
-    
-    .client-logo {
-        max-height: 50px !important;
-    }
-}
-
-/* ===================================
    LOGO IMAGE 100% FILL MODAL STYLES
    =================================== */
 
@@ -2133,18 +2109,8 @@ html {
     border: 3px solid transparent;
 }
 
-.ceo-image-container:hover {
-    transform: translateY(-10px);
-    border-color: #F0BB13;
-    box-shadow: 0 20px 50px rgba(240, 187, 19, 0.3);
-}
-
 .ceo-image-container img {
     transition: transform 0.5s ease;
-}
-
-.ceo-image-container:hover img {
-    transform: scale(1.05);
 }
 
 /* Quote Container */
@@ -2300,4 +2266,203 @@ html {
     h4, h5, h6 {
         font-weight: 500 !important;
     }
+}
+
+/* ===================================
+   CEO QUOTE FIXES (FINAL & COMPLETE)
+   =================================== */
+
+/* Opening Quote - Hanging on the left (Desktop/Large Tablet) */
+.opening-quote {
+    position: absolute;
+    left: -50px; /* Desktop: Pulls quote far left away from the text */
+    top: -10px;
+    font-size: 5rem;
+    color: #000000;
+    font-family: Georgia, serif;
+    font-weight: bold;
+    line-height: 1;
+}
+
+/* Closing Quote - Inline with text (No change needed here) */
+.closing-quote {
+    display: inline-block;
+    font-family: Georgia, serif;
+    font-weight: bold;
+    font-size: 5rem;
+    color: #000000;
+    line-height: 0;      
+    position: relative;
+    top: 30px;           
+    margin-left: 10px;   
+}
+
+/* Responsive Styles for Mobile and Tablet */
+@media (max-width: 768px) {
+    /* Adjust padding to prevent quote from being cut off */
+    .quote-container > div {
+        padding: 40px 20px 30px 30px !important; /* Ensure enough left padding */
+    }
+
+    /* Shrink and reposition Opening Quote */
+    .opening-quote {
+        left: -30px; /* Tablet: Pulls quote left relative to smaller padding */
+        top: -5px;
+        font-size: 3.5rem;
+    }
+
+    /* Shrink Closing Quote and realign */
+    .closing-quote {
+        font-size: 3.5rem;
+        top: 20px;
+        margin-left: 5px;
+    }
+}
+
+@media (max-width: 576px) {
+    /* Even smaller for phones */
+    .opening-quote {
+        left: -25px; /* Phone: Final adjustment to pull quote left */
+        font-size: 3rem;
+    }
+
+    .closing-quote {
+        font-size: 3rem;
+        top: 15px;
+    }
+}
+
+/* ===================================
+   CLIENT LOGOS FIXES - BIG ON ALL DEVICES WITH GOOD SPACING
+   =================================== */
+
+/* Container spacing - MORE SPACE between logos */
+.client-logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 25px !important; /* MORE PADDING for spacing */
+    background: #ffffff;
+    height: 160px !important; /* Tall container */
+    min-height: 160px !important;
+    margin: 10px !important; /* Add margin for spacing between logos */
+    border-radius: 12px; /* Optional: rounded corners */
+    transition: all 0.3s ease;
+}
+
+/* Hover effect - subtle */
+.client-logo-container:hover {
+    background: #f9f9f9 !important;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* BIG logos for laptop/desktop */
+.client-logo-container img {
+    max-height: 95px !important; /* VERY BIG for desktop */
+    max-width: 200px !important; 
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain !important;
+    filter: none !important;
+    opacity: 1 !important;
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect on logos */
+.client-logo-container:hover img {
+    transform: scale(1.05);
+}
+
+/* Fix HDInc Logo specifically */
+.client-logo-container img[alt="HDInc Logo"] {
+    max-height: 100px !important; /* Even bigger */
+    max-width: 180px !important;
+}
+
+/* Tablet view (768px - 992px) - STILL BIG */
+@media (max-width: 992px) {
+    .client-logo-container {
+        height: 150px !important;
+        padding: 35px 20px !important;
+        margin: 8px !important;
+    }
+    
+    .client-logo-container img {
+        max-height: 85px !important; /* STILL BIG on tablet */
+        max-width: 180px !important;
+    }
+    
+    .client-logo-container img[alt="HDInc Logo"] {
+        max-height: 90px !important;
+        max-width: 160px !important;
+    }
+}
+
+/* Mobile Landscape (576px - 768px) - STILL BIG */
+@media (max-width: 768px) {
+    .client-logo-container {
+        height: 130px !important;
+        padding: 30px 18px !important;
+        margin: 6px !important;
+    }
+    
+    .client-logo-container img {
+        max-height: 75px !important; /* BIG on mobile landscape */
+        max-width: 160px !important;
+    }
+    
+    .client-logo-container img[alt="HDInc Logo"] {
+        max-height: 80px !important;
+        max-width: 140px !important;
+    }
+}
+
+/* Mobile Portrait (under 576px) - STILL BIG */
+@media (max-width: 576px) {
+    .client-logo-container {
+        height: 110px !important;
+        padding: 25px 15px !important;
+        margin: 5px !important;
+    }
+    
+    .client-logo-container img {
+        max-height: 65px !important; /* BIG on mobile portrait */
+        max-width: 140px !important;
+    }
+    
+    .client-logo-container img[alt="HDInc Logo"] {
+        max-height: 70px !important;
+        max-width: 120px !important;
+    }
+}
+
+/* Small phones - STILL BIG */
+@media (max-width: 400px) {
+    .client-logo-container {
+        height: 100px !important;
+        padding: 20px 12px !important;
+        margin: 4px !important;
+    }
+    
+    .client-logo-container img {
+        max-height: 55px !important; /* STILL BIG on small phones */
+        max-width: 120px !important;
+    }
+    
+    .client-logo-container img[alt="HDInc Logo"] {
+        max-height: 60px !important;
+        max-width: 100px !important;
+    }
+}
+
+/* IMPORTANT: Make the grid spacing better */
+#clients-section .row {
+    margin-left: -10px !important;
+    margin-right: -10px !important;
+}
+
+#clients-section .row > div {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
 }
