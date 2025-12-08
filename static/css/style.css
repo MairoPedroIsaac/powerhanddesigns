@@ -242,7 +242,9 @@ footer h4::after {
     transition: all 0.3s ease;
     border: 2px solid var(--secondary-color);
     border-radius: 50% !important;
+    border-radius: 50% !important; /* Double it for safety */
     padding: 0;
+    aspect-ratio: 1 / 1 !important; /* Forces perfect square */
 }
 
 .social-links .btn:hover {
@@ -1567,6 +1569,28 @@ section:first-of-type::before {
     border-radius: 8px;
     transition: all 0.3s ease;
     margin-bottom: 1.5rem;
+}
+
+/* Contact Page Social Buttons - PERFECT CIRCLES */
+.contact-info .social-links .btn {
+    width: 45px !important;
+    height: 45px !important;
+    border-radius: 50% !important;
+    border-radius: 50% !important;
+    padding: 0 !important;
+    aspect-ratio: 1 / 1 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* Override Bootstrap's btn-lg class for perfect circles */
+.btn-lg.rounded-circle {
+    border-radius: 50% !important;
+    width: 45px !important;
+    height: 45px !important;
+    padding: 0 !important;
+    line-height: 1 !important;
 }
 
 .contact-info .contact-item:hover {
@@ -2933,7 +2957,7 @@ html {
 }
 
 /* ===================================
-   IMAGE BANNER STYLES (Using BRAND PAW BANNER)
+   IMAGE BANNER STYLES - DIFFERENT IMAGES FOR LAPTOP & MOBILE
    =================================== */
 
 .image-banner-container {
@@ -2942,20 +2966,21 @@ html {
 
 .image-banner-link {
     display: block;
-    transition: all 0.3s ease;
+    cursor: default; /* No pointer cursor */
     text-decoration: none;
 }
 
+/* Remove ALL hover effects */
 .image-banner-link:hover {
-    transform: translateY(-3px);
+    transform: none; /* No movement */
     text-decoration: none;
 }
 
+/* Common styles for both banners */
 .image-banner {
     width: 100%;
-    height: auto !important; /* Let the image determine its own height */
-    max-height: none !important; /* Remove height restriction */
-    object-fit: contain !important; /* Show FULL image, no cropping */
+    height: auto !important;
+    object-fit: contain !important;
     border-radius: 12px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
@@ -2963,37 +2988,37 @@ html {
 }
 
 .image-banner:hover {
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
-    border-color: #F0BB13;
-    transform: scale(1.02); /* Slight zoom on hover */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Keep original shadow */
+    border-color: transparent; /* No border change */
+    transform: none; /* No zoom */
 }
 
-/* Mobile - Shorter banner */
-@media (max-width: 768px) {
-    .image-banner {
-        max-height: 150px !important; /* Shorter on mobile */
-        object-fit: contain !important; /* Still show full image */
+/* Desktop banner - Show on tablets and larger */
+.desktop-banner {
+    display: block;
+    max-height: 250px;
+}
+
+/* Mobile banner - Hide by default */
+.mobile-banner {
+    display: none;
+}
+
+/* Mobile view - Switch banners */
+@media (max-width: 767px) {
+    .desktop-banner {
+        display: none; /* Hide desktop banner */
+    }
+    
+    .mobile-banner {
+        display: block; /* Show mobile banner */
+        max-height: 180px;
     }
 }
 
 @media (max-width: 576px) {
-    .image-banner {
-        max-height: 120px !important; /* Even shorter on small phones */
-    }
-}
-
-/* Make it more rectangular on larger screens */
-@media (min-width: 768px) {
-    .image-banner {
-        max-height: 180px;
-        object-fit: cover;
-    }
-}
-
-/* Make it more prominent on desktop */
-@media (min-width: 992px) {
-    .image-banner {
-        max-height: 200px;
+    .mobile-banner {
+        max-height: 150px; /* Even shorter on small phones */
     }
 }
 
@@ -3293,3 +3318,200 @@ html {
     background: transparent !important;
 }
 
+/* Solutions page instruction text */
+.instruction-text {
+    color: #000000 !important;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 0;
+    padding: 10px 0;
+    border-bottom: 2px solid #F0BB13;
+    display: inline-block;
+}
+
+/* ===================================
+   SOCIAL MEDIA BUTTONS - PERFECT CIRCLES FIX
+   =================================== */
+
+/* Force all social media buttons to be perfect circles */
+.social-links .btn,
+.contact-info .social-links .btn,
+.btn-outline-dark.btn-lg.rounded-circle {
+    width: 45px !important;
+    height: 45px !important;
+    border-radius: 50% !important;
+    border-radius: 50% !important; /* Duplicate for extra force */
+    padding: 0 !important;
+    line-height: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 45px !important;
+    min-height: 45px !important;
+}
+
+/* Remove Bootstrap's default button padding */
+.social-links .btn.btn-lg {
+    padding: 0 !important;
+}
+
+/* Ensure icons are centered */
+.social-links .btn i {
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1 !important;
+}
+
+/* Fix for contact page specifically */
+.contact-info .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.contact-info .social-links .btn {
+    flex-shrink: 0;
+}
+
+/* ===================================
+   SIMPLE SOCIAL BUTTON CLASS - PERFECT CIRCLES
+   =================================== */
+
+.social-btn {
+    width: 45px !important;
+    height: 45px !important;
+    border-radius: 50% !important;
+    padding: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border: 2px solid #000000 !important;
+    color: #000000 !important;
+    transition: all 0.3s ease !important;
+}
+
+.social-btn:hover {
+    background-color: #F0BB13 !important;
+    border-color: #F0BB13 !important;
+    color: #000000 !important;
+    transform: translateY(-3px) !important;
+}
+
+/* Optional: Add specific colors for each social platform */
+.social-btn.instagram:hover {
+    background-color: #E4405F !important;
+    border-color: #E4405F !important;
+}
+
+.social-btn.whatsapp:hover {
+    background-color: #25D366 !important;
+    border-color: #25D366 !important;
+}
+
+.social-btn.linkedin:hover {
+    background-color: #0A66C2 !important;
+    border-color: #0A66C2 !important;
+}
+
+.social-btn.facebook:hover {
+    background-color: #1877F2 !important;
+    border-color: #1877F2 !important;
+}
+
+/* ONE LINE FIX for oval buttons */
+.rounded-circle { aspect-ratio: 1 / 1 !important; }
+
+/* ===================================
+   SIMPLE FIX: Move social icons to the LEFT
+   =================================== */
+.contact-info .social-section.text-start h5 {
+    text-align: left !important;
+    margin-left: 0 !important;
+}
+
+.contact-info .social-section.text-start .social-links {
+    justify-content: flex-start !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+}
+
+/* ===================================
+   IPHONE 13 & SIMILAR DEVICES FIX
+   =================================== */
+
+/* Fix for iPhone 13, 12, X, XR (390px width) */
+@media (max-width: 430px) and (min-width: 375px) {
+    /* Contact Hero - Ensure full visibility */
+    .contact-hero {
+        min-height: 50vh !important;
+        padding-top: 120px !important;
+        padding-bottom: 60px !important;
+    }
+    
+    .contact-hero h1 {
+        font-size: 2rem !important;
+        margin-top: 20px !important;
+        line-height: 1.3 !important;
+    }
+    
+    .contact-hero p {
+        font-size: 0.95rem !important;
+        margin-top: 15px !important;
+    }
+    
+    /* Hero sections for all pages */
+    .hero-section,
+    .about-hero,
+    .portfolio-hero,
+    .solutions-hero,
+    .project-hero {
+        min-height: 60vh !important;
+        padding-top: 100px !important;
+    }
+    
+    /* Ensure navbar doesn't overlap */
+    body {
+        padding-top: 75px !important;
+    }
+    
+    /* Contact form adjustments */
+    .contact-info .contact-item {
+        padding: 12px !important;
+        font-size: 0.9rem !important;
+    }
+    
+    /* CTA section text */
+    .contact-hero .lead {
+        font-size: 0.95rem !important;
+        line-height: 1.5 !important;
+    }
+    
+    /* Fix for "Let's Create Something Amazing" section */
+    .contact-hero .container {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+}
+
+/* Extra small phones (iPhone SE, etc.) */
+@media (max-width: 374px) {
+    .contact-hero {
+        min-height: 55vh !important;
+        padding-top: 100px !important;
+    }
+    
+    .contact-hero h1 {
+        font-size: 1.8rem !important;
+    }
+}
+
+/* Landscape mode for iPhones */
+@media (max-height: 450px) and (orientation: landscape) {
+    .contact-hero,
+    .hero-section,
+    .about-hero {
+        min-height: 100vh !important;
+        padding-top: 80px !important;
+        padding-bottom: 40px !important;
+    }
+}

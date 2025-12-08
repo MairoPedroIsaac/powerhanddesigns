@@ -386,18 +386,23 @@
             </div>
         </div>
         
-                  <!-- IMAGE BANNER ADVERTISEMENT -->
-        <div class="row mt-5">
-            <div class="col-12">
-                <div class="image-banner-container text-center">
-                    <a href="#" class="image-banner-link">
-                        <img src="{% static 'images/BRAND PAW BANNER.png' %}" 
-                             alt="Brand Power Advertisement" 
-                             class="img-fluid rounded shadow-lg image-banner">
-                    </a>
-                </div>
-            </div>
+                 <!-- IMAGE BANNER ADVERTISEMENT -->
+<div class="row mt-5">
+    <div class="col-12">
+        <div class="image-banner-container text-center">
+                <!-- Desktop banner (shown on tablets and laptops) -->
+                <img src="{% static 'images/laptop.png' %}" 
+                     alt="Brand Power Advertisement" 
+                     class="img-fluid rounded shadow-lg image-banner desktop-banner">
+                
+                <!-- Mobile banner (shown on phones) -->
+                <img src="{% static 'images/Phone ads.png' %}" 
+                     alt="Brand Power Advertisement" 
+                     class="img-fluid rounded shadow-lg image-banner mobile-banner">
+            </a>
         </div>
+    </div>
+</div>
         
         <!-- Optional: Keep this if you want the button too -->
         <div class="text-center mt-4">
