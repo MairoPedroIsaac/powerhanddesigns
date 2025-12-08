@@ -29,7 +29,9 @@
                     <button class="filter-btn" data-filter="branding">Branding</button>
                     <button class="filter-btn" data-filter="packaging">Packaging</button>
                     <button class="filter-btn" data-filter="print">Print Design</button>
-                    <button class="filter-btn" data-filter="environmental">Environmental</button>
+                    <button class="filter-btn" data-filter="environmental">Environmental Design</button>
+                    <button class="filter-btn" data-filter="identity">Identity & Logo</button>
+                    <button class="filter-btn" data-filter="strategy">Brand Strategy</button>
                 </div>
             </div>
         </div>
@@ -49,7 +51,7 @@
                         <div class="portfolio-overlay">
                             <div class="portfolio-overlay-content">
                                 <h4>{{ project.title }}</h4>
-                                <p>{{ project.category_display }}</p>
+                                <p>{{ project.get_category_display }}</p>
                                 <a href="{% url 'portfolio_detail' project.slug %}" class="btn btn-warning btn-sm">
                                     View Project <i class="fas fa-arrow-right ms-2"></i>
                                 </a>

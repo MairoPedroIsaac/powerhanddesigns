@@ -5,8 +5,15 @@ from .models import ContactSubmission, Project, ProjectGalleryImage
 class ProjectGalleryImageInline(admin.TabularInline):
     model = ProjectGalleryImage
     extra = 1
-    fields = ['image', 'caption', 'order']
+    fields = ['image', 'image_preview', 'caption', 'order']
+    readonly_fields = ['image_preview']
     ordering = ['order']
+    
+    def image_preview(self, obj):
+        if obj.image:
+            return format_html('<img src="{}" style="max-height: 100px; max-width: 150px;" />', obj.image.url)
+        return "-"
+    image_preview.short_description = "Preview"
 
 @admin.register(ContactSubmission)
 class ContactSubmissionAdmin(admin.ModelAdmin):
@@ -31,6 +38,13 @@ class ProjectAdmin(admin.ModelAdmin):
     inlines = [ProjectGalleryImageInline]
     list_per_page = 20
     
+    # ADD THIS METHOD for featured image preview
+    def image_preview(self, obj):
+        if obj.featured_image:
+            return format_html('<img src="{}" style="max-height: 100px; max-width: 150px;" />', obj.featured_image.url)
+        return "-"
+    image_preview.short_description = "Featured Image Preview"
+    
     fieldsets = (
         ('Basic Information', {
             'fields': (
@@ -39,8 +53,8 @@ class ProjectAdmin(admin.ModelAdmin):
                 'services', 'year', 'website_url'
             )
         }),
-        ('Images', {
-            'fields': ('featured_image',),
+        ('Featured Image', {
+            'fields': ('featured_image', 'image_preview'),
             'classes': ('collapse',)
         }),
         ('Project Details', {
@@ -55,10 +69,18 @@ class ProjectAdmin(admin.ModelAdmin):
             'fields': ('is_featured',)
         })
     )
+    readonly_fields = ['image_preview']
 
 @admin.register(ProjectGalleryImage)
 class ProjectGalleryImageAdmin(admin.ModelAdmin):
-    list_display = ['project', 'caption', 'order']
+    list_display = ['project', 'caption', 'order', 'image_preview']
     list_filter = ['project']
     search_fields = ['project__title', 'caption']
     list_editable = ['order']
+    
+    # ADD THIS METHOD
+    def image_preview(self, obj):
+        if obj.image:
+            return format_html('<img src="{}" style="max-height: 50px; max-width: 80px;" />', obj.image.url)
+        return "-"
+    image_preview.short_description = "Preview"

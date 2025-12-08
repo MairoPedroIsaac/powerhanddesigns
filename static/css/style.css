@@ -2725,3 +2725,125 @@ html {
 /* Optional: Allow multiple accordions to be open at once */
 /* Remove data-bs-parent="#solutionsAccordion" from all collapse divs if you want multiple open */
 
+
+/* ===================================
+   CONSISTENT MOBILE FONT SIZES ACROSS ALL PAGES
+   =================================== */
+
+@media (max-width: 768px) {
+    /* Standardize all H1 headings */
+    h1, 
+    .hero-title,
+    .display-3,
+    .display-4 {
+        font-size: 2.2rem !important;
+        line-height: 1.3 !important;
+    }
+    
+    /* Standardize all H2 headings */
+    h2,
+    .display-5 {
+        font-size: 1.8rem !important;
+        line-height: 1.3 !important;
+    }
+    
+    /* Standardize all H3 headings */
+    h3 {
+        font-size: 1.5rem !important;
+        line-height: 1.4 !important;
+    }
+    
+    /* Standardize all H4-H6 headings */
+    h4, h5, h6 {
+        font-size: 1.2rem !important;
+    }
+    
+    /* Standardize all paragraphs */
+    p,
+    .lead,
+    .fs-5 {
+        font-size: 1rem !important;
+        line-height: 1.6 !important;
+    }
+    
+    /* Standardize all buttons */
+    .btn {
+        font-size: 1rem !important;
+        padding: 10px 20px !important;
+    }
+    
+    .btn-lg {
+        font-size: 1.1rem !important;
+        padding: 12px 25px !important;
+    }
+}
+
+/* ===================================
+   PORTFOLIO PAGE FIXES & ENHANCEMENTS
+   =================================== */
+
+/* Portfolio Grid Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.portfolio-item {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Fix for when filtering hides items */
+.portfolio-item[style*="display: none"] {
+    animation: none;
+}
+
+/* Improve filter buttons for mobile */
+@media (max-width: 768px) {
+    .portfolio-filters {
+        gap: 8px;
+    }
+    
+    .filter-btn {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Project Detail Page Improvements */
+.project-info-card {
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Make gallery images look better */
+.gallery-item img {
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.02);
+}
+
+/* Testimonial styling */
+.testimonial-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-left: 5px solid #F0BB13;
+}
+
+/* Responsive project hero */
+@media (max-width: 768px) {
+    .project-hero {
+        min-height: 40vh;
+        background-attachment: scroll !important;
+    }
+    
+    .project-hero h1 {
+        font-size: 2rem !important;
+    }
+}
