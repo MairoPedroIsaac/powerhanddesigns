@@ -858,6 +858,20 @@ section:first-of-type::before {
     background: linear-gradient(90deg, transparent, #F0BB13, transparent);
 }
 
+/* Add this inside .solutions-hero or create a media query */
+@media (max-width: 768px) {
+    .solutions-hero {
+        min-height: 60vh; /* Increase height */
+        padding-top: 100px; /* Add extra top padding for mobile */
+        padding-bottom: 40px; /* Balance bottom too */
+    }
+    
+    .solutions-hero h1 {
+        font-size: 2.5rem; /* Make heading smaller if needed */
+        margin-top: 20px; /* Add space above heading */
+    }
+}
+
 /* Solution Detail Cards */
 .solution-detail-card {
     background: white;
