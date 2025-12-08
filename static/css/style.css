@@ -2847,3 +2847,449 @@ html {
         font-size: 2rem !important;
     }
 }
+
+/* ===================================
+   FEATURES CAROUSEL FOR MOBILE
+   =================================== */
+
+.features-carousel {
+    position: relative;
+    overflow: hidden;
+    padding: 0 40px; /* Space for arrows */
+}
+
+.features-carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+}
+
+.carousel-slide {
+    flex: 0 0 100%;
+    max-width: 100%;
+    transition: opacity 0.3s ease;
+    opacity: 0.7;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+}
+
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(240, 187, 19, 0.9);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    font-size: 1.2rem;
+    z-index: 10;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-arrow:hover {
+    background: #000;
+    color: #F0BB13;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-arrow-prev {
+    left: 0;
+}
+
+.carousel-arrow-next {
+    right: 0;
+}
+
+.carousel-dots {
+    margin-top: 20px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ddd;
+    margin: 0 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background: #F0BB13;
+    transform: scale(1.2);
+}
+
+.dot:hover {
+    background: #F0BB13;
+}
+
+/* ===================================
+   IMAGE BANNER STYLES (Using BRAND PAW BANNER)
+   =================================== */
+
+.image-banner-container {
+    margin: 20px 0;
+}
+
+.image-banner-link {
+    display: block;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.image-banner-link:hover {
+    transform: translateY(-3px);
+    text-decoration: none;
+}
+
+.image-banner {
+    width: 100%;
+    height: auto !important; /* Let the image determine its own height */
+    max-height: none !important; /* Remove height restriction */
+    object-fit: contain !important; /* Show FULL image, no cropping */
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.image-banner:hover {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    border-color: #F0BB13;
+    transform: scale(1.02); /* Slight zoom on hover */
+}
+
+/* Mobile - Shorter banner */
+@media (max-width: 768px) {
+    .image-banner {
+        max-height: 150px !important; /* Shorter on mobile */
+        object-fit: contain !important; /* Still show full image */
+    }
+}
+
+@media (max-width: 576px) {
+    .image-banner {
+        max-height: 120px !important; /* Even shorter on small phones */
+    }
+}
+
+/* Make it more rectangular on larger screens */
+@media (min-width: 768px) {
+    .image-banner {
+        max-height: 180px;
+        object-fit: cover;
+    }
+}
+
+/* Make it more prominent on desktop */
+@media (min-width: 992px) {
+    .image-banner {
+        max-height: 200px;
+    }
+}
+
+/* ===================================
+   SOLUTIONS ACCORDION STYLES (Updated)
+   =================================== */
+
+/* Accordion Container */
+#solutionsAccordion {
+    border: none;
+    background: transparent;
+}
+
+/* Individual Accordion Items */
+.solution-accordion-item {
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px !important;
+    margin-bottom: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.solution-accordion-item:hover {
+    border-color: #F0BB13;
+    box-shadow: 0 8px 25px rgba(240, 187, 19, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Accordion Button */
+.solution-accordion-item .accordion-button {
+    background: white;
+    border: none;
+    padding: 20px 25px;
+    font-size: 1rem;
+    color: #000000;
+    box-shadow: none !important;
+    border-radius: 12px 12px 0 0 !important;
+}
+
+.solution-accordion-item .accordion-button:not(.collapsed) {
+    background: white;
+    color: #000000;
+    border-bottom: 2px solid #F0BB13;
+}
+
+.solution-accordion-item .accordion-button:focus {
+    box-shadow: none !important;
+    border-color: #F0BB13;
+}
+
+/* Accordion Number */
+.accordion-number {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, #F0BB13, #ffd54f);
+    color: #000000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 800;
+    flex-shrink: 0;
+}
+
+/* Accordion Icon */
+.accordion-icon {
+    width: 40px;
+    height: 40px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.accordion-icon i {
+    font-size: 1.2rem;
+    color: #000000;
+}
+
+.solution-accordion-item .accordion-button:not(.collapsed) .accordion-icon {
+    background: linear-gradient(135deg, #F0BB13, #ffd54f);
+}
+
+/* Accordion Title */
+.accordion-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #000000;
+    margin-left: 10px;
+    text-align: left;
+}
+
+/* Accordion Arrow */
+.accordion-arrow i {
+    font-size: 1.1rem;
+    color: #666;
+    transition: transform 0.3s ease;
+}
+
+.solution-accordion-item .accordion-button:not(.collapsed) .accordion-arrow i {
+    transform: rotate(180deg);
+    color: #F0BB13;
+}
+
+/* Accordion Body */
+.solution-accordion-item .accordion-body {
+    padding: 20px;
+    background: #fafafa;
+    border-top: 1px solid #f0f0f0;
+}
+
+/* Features List */
+.solution-features {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0 0;
+}
+
+.solution-features li {
+    padding: 8px 0;
+    color: #444;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+}
+
+.solution-features li:last-child {
+    border-bottom: none;
+}
+
+.solution-features li i {
+    color: #F0BB13;
+    margin-right: 10px;
+    font-size: 1rem;
+}
+
+.solution-detail-description {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .solution-accordion-item .accordion-button {
+        padding: 15px;
+    }
+    
+    .accordion-icon {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .accordion-icon i {
+        font-size: 1.1rem;
+    }
+    
+    .accordion-title {
+        font-size: 1rem;
+        margin-left: 8px;
+    }
+    
+    .solution-accordion-item .accordion-body {
+        padding: 15px;
+    }
+    
+    .solution-features li {
+        font-size: 0.9rem;
+    }
+    
+    .solution-detail-description {
+        font-size: 0.95rem;
+    }
+    
+    .accordion-number {
+        width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
+    }
+}
+
+/* ===================================
+   AUTO-SCROLLING LOGO SLIDER
+   =================================== */
+.logo-slider {
+    width: 100%;
+    overflow: hidden;
+    padding: 40px 0;
+    position: relative;
+}
+
+.logo-track {
+    display: flex;
+    align-items: center;
+    animation: scroll-left 40s linear infinite;
+    width: fit-content;
+}
+
+.logo-track:hover {
+    animation-play-state: paused;
+}
+
+.logo-item {
+    flex: 0 0 auto;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 200px;
+}
+
+.logo-item img {
+    max-height: 80px;
+    max-width: 180px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: brightness(0%); /* REMOVE invert(0%) */
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+.logo-item img:hover {
+    filter: brightness(100%); /* REMOVE invert(0%) */
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .logo-item {
+        padding: 0 30px;
+        min-width: 150px;
+    }
+    
+    .logo-item img {
+        max-height: 60px;
+        max-width: 140px;
+        filter: brightness(0%); /* ADD THIS LINE */
+        opacity: 1; /* ADD THIS LINE */
+    }
+    
+    .logo-track {
+        animation: scroll-left 30s linear infinite;
+    }
+    
+    /* ADD THIS SECTION for VA logo on mobile */
+    .light-logo {
+        filter: none !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .logo-item {
+        padding: 0 25px;
+        min-width: 120px;
+    }
+    
+    .logo-item img {
+        max-height: 50px;
+        max-width: 120px;
+        filter: brightness(0%); /* ADD THIS LINE */
+        opacity: 1; /* ADD THIS LINE */
+    }
+    
+    /* ADD THIS SECTION for VA logo on small mobile */
+    .light-logo {
+        filter: none !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+}
+
+/* Fix for VA logo that's already black */
+.light-logo {
+    filter: none !important; /* CHANGE from brightness(50%) to none */
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+}
+

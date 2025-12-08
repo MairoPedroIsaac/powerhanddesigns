@@ -40,37 +40,98 @@
                 <p class="lead text-muted">We combine creativity with sustainability to deliver exceptional results</p>
             </div>
         </div>
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="card border-0 shadow-sm h-100">
-                    <div class="card-body text-center p-4">
-                        <div class="feature-icon">
-                            <i class="fas fa-paint-brush fa-3x"></i>
+        
+        <!-- Mobile View (with swipe) -->
+        <div class="d-block d-md-none">
+            <div class="features-carousel position-relative">
+                <!-- Carousel Container -->
+                <div class="features-carousel-track" id="featuresCarousel">
+                    <div class="carousel-slide active">
+                        <div class="card border-0 shadow-sm h-100 mx-2">
+                            <div class="card-body text-center p-4">
+                                <div class="feature-icon">
+                                    <i class="fas fa-paint-brush fa-3x"></i>
+                                </div>
+                                <h4 class="card-title">Creative Excellence</h4>
+                                <p class="card-text">Innovative designs that capture your brand essence and communicate your unique story effectively.</p>
+                            </div>
                         </div>
-                        <h4 class="card-title">Creative Excellence</h4>
-                        <p class="card-text">Innovative designs that capture your brand essence and communicate your unique story effectively.</p>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="card border-0 shadow-sm h-100 mx-2">
+                            <div class="card-body text-center p-4">
+                                <div class="feature-icon">
+                                    <i class="fas fa-leaf fa-3x"></i>
+                                </div>
+                                <h4 class="card-title">Sustainable Solutions</h4>
+                                <p class="card-text">Eco-conscious branding strategies that reduce environmental impact while maximizing business growth.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="card border-0 shadow-sm h-100 mx-2">
+                            <div class="card-body text-center p-4">
+                                <div class="feature-icon">
+                                    <i class="fas fa-globe fa-3x"></i>
+                                </div>
+                                <h4 class="card-title">African Focus</h4>
+                                <p class="card-text">Deep understanding of African markets and cultures to create brands that resonate locally and globally.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card border-0 shadow-sm h-100">
-                    <div class="card-body text-center p-4">
-                        <div class="feature-icon">
-                            <i class="fas fa-leaf fa-3x"></i>
-                        </div>
-                        <h4 class="card-title">Sustainable Solutions</h4>
-                        <p class="card-text">Eco-conscious branding strategies that reduce environmental impact while maximizing business growth.</p>
-                    </div>
+                
+                <!-- Navigation Arrows -->
+                <button class="carousel-arrow carousel-arrow-prev">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-arrow carousel-arrow-next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                
+                <!-- Dots Indicator -->
+                <div class="carousel-dots mt-4 d-flex justify-content-center">
+                    <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                    <span class="dot" data-slide="2"></span>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card border-0 shadow-sm h-100">
-                    <div class="card-body text-center p-4">
-                        <div class="feature-icon">
-                            <i class="fas fa-globe fa-3x"></i>
+        </div>
+        
+        <!-- Desktop View (grid layout) -->
+        <div class="d-none d-md-block">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon">
+                                <i class="fas fa-paint-brush fa-3x"></i>
+                            </div>
+                            <h4 class="card-title">Creative Excellence</h4>
+                            <p class="card-text">Innovative designs that capture your brand essence and communicate your unique story effectively.</p>
                         </div>
-                        <h4 class="card-title">African Focus</h4>
-                        <p class="card-text">Deep understanding of African markets and cultures to create brands that resonate locally and globally.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon">
+                                <i class="fas fa-leaf fa-3x"></i>
+                            </div>
+                            <h4 class="card-title">Sustainable Solutions</h4>
+                            <p class="card-text">Eco-conscious branding strategies that reduce environmental impact while maximizing business growth.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon">
+                                <i class="fas fa-globe fa-3x"></i>
+                            </div>
+                            <h4 class="card-title">African Focus</h4>
+                            <p class="card-text">Deep understanding of African markets and cultures to create brands that resonate locally and globally.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -78,7 +139,7 @@
     </div>
 </section>
 
-<!-- Solutions Preview Section -->
+ <!-- Solutions Preview Section -->
 <section class="py-5" id="solutions-preview">
     <div class="container">
         <div class="row text-center mb-5">
@@ -88,102 +149,266 @@
             </div>
         </div>
         
-        <div class="row g-4">
-            <div class="col-lg-4 col-md-6">
-                <div class="card p-4 shadow-sm border-0 h-100 solution-card">
-                    <div class="card-body">
-                        <div class="solution-icon mb-3">
-                            <i class="fas fa-bullseye fa-3x text-warning"></i> <!-- Changed to fa-3x -->
+        <!-- Accordion for All Devices -->
+        <div class="accordion" id="solutionsAccordion">
+            <!-- Solution 1 -->
+            <div class="accordion-item solution-accordion-item">
+                <h2 class="accordion-header" id="solutionHeading1">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#solutionCollapse1" aria-expanded="false" aria-controls="solutionCollapse1">
+                        <div class="d-flex align-items-center w-100">
+                            <span class="accordion-number me-3">01</span>
+                            <div class="accordion-icon me-3">
+                                <i class="fas fa-bullseye"></i>
+                            </div>
+                            <span class="accordion-title">Brand Strategy</span>
                         </div>
-                        <h5 class="card-title fw-bold">Brand Strategy</h5>
-                        <p class="card-text">Market research, positioning, naming, tone & messaging built for conversion.</p>
+                        <div class="accordion-arrow ms-auto">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </button>
+                </h2>
+                <div id="solutionCollapse1" class="accordion-collapse collapse" aria-labelledby="solutionHeading1" data-bs-parent="#solutionsAccordion">
+                    <div class="accordion-body">
+                        <p class="solution-detail-description">Market research, positioning, naming, tone & messaging built for conversion.</p>
+                        <ul class="solution-features">
+                            <li><i class="fas fa-check-circle me-2"></i> Comprehensive Market Analysis</li>
+                            <li><i class="fas fa-check-circle me-2"></i> Brand Positioning Strategy</li>
+                            <li><i class="fas fa-check-circle me-2"></i> Naming & Tagline Development</li>
+                            <li><i class="fas fa-check-circle me-2"></i> Voice & Messaging Framework</li>
+                        </ul>
                     </div>
                 </div>
             </div>
             
-            <div class="col-lg-4 col-md-6">
-                <div class="card p-4 shadow-sm border-0 h-100 solution-card">
-                    <div class="card-body">
-                        <div class="solution-icon mb-3">
-                            <i class="fas fa-palette fa-3x text-warning"></i> <!-- Changed to fa-3x -->
+            <!-- Solution 2 -->
+            <div class="accordion-item solution-accordion-item">
+                <h2 class="accordion-header" id="solutionHeading2">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#solutionCollapse2" aria-expanded="false" aria-controls="solutionCollapse2">
+                        <div class="d-flex align-items-center w-100">
+                            <span class="accordion-number me-3">02</span>
+                            <div class="accordion-icon me-3">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <span class="accordion-title">Identity & Logo</span>
                         </div>
-                        <h5 class="card-title fw-bold">Identity & Logo</h5>
-                        <p class="card-text">Logo systems, brand guidelines, typography and color systems for consistency across touchpoints.</p>
+                        <div class="accordion-arrow ms-auto">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </button>
+                </h2>
+                <div id="solutionCollapse2" class="accordion-collapse collapse" aria-labelledby="solutionHeading2" data-bs-parent="#solutionsAccordion">
+                    <div class="accordion-body">
+                        <p class="solution-detail-description">Logo systems, brand guidelines, typography and color systems for consistency across touchpoints.</p>
+                        <ul class="solution-features">
+                            <li><i class="fas fa-check-circle me-2"></i> Custom Logo Design</li>
+                            <li><i class="fas fa-check-circle me-2"></i> Complete Brand Guidelines</li>
+                            <li><i class="fas fa-check-circle me-2"></i> Typography Systems</li>
+                            <li><i class="fas fa-check-circle me-2"></i> Color Palette Development</li>
+                        </ul>
                     </div>
                 </div>
             </div>
 
-            <div class="col-lg-4 col-md-6">
-                <div class="card p-4 shadow-sm border-0 h-100 solution-card">
-                    <div class="card-body">
-                        <div class="solution-icon mb-3">
-                            <i class="fas fa-print fa-3x text-warning"></i> <!-- Changed to fa-3x -->
+            <!-- Solution 3 -->
+            <div class="accordion-item solution-accordion-item">
+                <h2 class="accordion-header" id="solutionHeading3">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#solutionCollapse3" aria-expanded="false" aria-controls="solutionCollapse3">
+                        <div class="d-flex align-items-center w-100">
+                            <span class="accordion-number me-3">03</span>
+                            <div class="accordion-icon me-3">
+                                <i class="fas fa-print"></i>
+                            </div>
+                            <span class="accordion-title">Print and Fabrication</span>
                         </div>
-                        <h5 class="card-title fw-bold">Print and Fabrication</h5>
-                        <p class="card-text">High-quality printing and fabrication using sustainable materials when possible.</p>
+                        <div class="accordion-arrow ms-auto">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </button>
+                </h2>
+                <div id="solutionCollapse3" class="accordion-collapse collapse" aria-labelledby="solutionHeading3" data-bs-parent="#solutionsAccordion">
+                    <div class="accordion-body">
+                        <p class="solution-detail-description">High-quality printing and fabrication using sustainable materials when possible.</p>
+                        <ul class="solution-features">
+                            <li><i class="fas fa-check-circle me-2"></i> Business Stationery</li>
+                            <li><i class="fas fa-check-circle me-2"></i> Marketing Collateral</li>
+                            <li><i class="fas fa-check-circle me-2"></i> Signage & Displays</li>
+                            <li><i class="fas fa-check-circle me-2"></i> Sustainable Material Selection</li>
+                        </ul>
                     </div>
                 </div>
             </div>
 
-            <div class="col-lg-4 col-md-6">
-                <div class="card p-4 shadow-sm border-0 h-100 solution-card">
-                    <div class="card-body">
-                        <div class="solution-icon mb-3">
-                            <i class="fas fa-box fa-3x text-warning"></i> <!-- Changed to fa-3x -->
+            <!-- Solution 4 -->
+            <div class="accordion-item solution-accordion-item">
+                <h2 class="accordion-header" id="solutionHeading4">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#solutionCollapse4" aria-expanded="false" aria-controls="solutionCollapse4">
+                        <div class="d-flex align-items-center w-100">
+                            <span class="accordion-number me-3">04</span>
+                            <div class="accordion-icon me-3">
+                                <i class="fas fa-box"></i>
+                            </div>
+                            <span class="accordion-title">Eco Packaging</span>
                         </div>
-                        <h5 class="card-title fw-bold">Eco Packaging</h5>
-                        <p class="card-text">We design product packaging solutions that balance aesthetics, function, and sustainability.</p>
+                        <div class="accordion-arrow ms-auto">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </button>
+                </h2>
+                <div id="solutionCollapse4" class="accordion-collapse collapse" aria-labelledby="solutionHeading4" data-bs-parent="#solutionsAccordion">
+                    <div class="accordion-body">
+                        <p class="solution-detail-description">We design product packaging solutions that balance aesthetics, function, and sustainability.</p>
+                        <ul class="solution-features">
+                            <li><i class="fas fa-check-circle me-2"></i> Sustainable Material Design</li>
+                            <li><i class="fas fa-check-circle me-2"></i> Structural Packaging Solutions</li>
+                            <li><i class="fas fa-check-circle me-2"></i> Eco-friendly Inks & Finishes</li>
+                            <li><i class="fas fa-check-circle me-2"></i> Custom Packaging Prototypes</li>
+                        </ul>
                     </div>
                 </div>
             </div>
 
-            <div class="col-lg-4 col-md-6">
-                <div class="card p-4 shadow-sm border-0 h-100 solution-card">
-                    <div class="card-body">
-                        <div class="solution-icon mb-3">
-                            <i class="fas fa-building fa-3x text-warning"></i> <!-- Changed to fa-3x -->
+            <!-- Solution 5 -->
+            <div class="accordion-item solution-accordion-item">
+                <h2 class="accordion-header" id="solutionHeading5">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#solutionCollapse5" aria-expanded="false" aria-controls="solutionCollapse5">
+                        <div class="d-flex align-items-center w-100">
+                            <span class="accordion-number me-3">05</span>
+                            <div class="accordion-icon me-3">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <span class="accordion-title">Environmental Design</span>
                         </div>
-                        <h5 class="card-title fw-bold">Environmental Design</h5>
-                        <p class="card-text">Transform your office and event space into a bold, inspiring, and sustainable brand experience.</p>
+                        <div class="accordion-arrow ms-auto">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </button>
+                </h2>
+                <div id="solutionCollapse5" class="accordion-collapse collapse" aria-labelledby="solutionHeading5" data-bs-parent="#solutionsAccordion">
+                    <div class="accordion-body">
+                        <p class="solution-detail-description">Transform your office and event space into a bold, inspiring, and sustainable brand experience.</p>
+                        <ul class="solution-features">
+                            <li><i class="fas fa-check-circle me-2"></i> Office & Retail Space Design</li>
+                            <li><i class="fas fa-check-circle me-2"></i> Exhibition & Event Branding</li>
+                            <li><i class="fas fa-check-circle me-2"></i> Wayfinding Systems</li>
+                            <li><i class="fas fa-check-circle me-2"></i> Sustainable Materials Integration</li>
+                        </ul>
                     </div>
                 </div>
             </div>
 
-            <div class="col-lg-4 col-md-6">
-                <div class="card p-4 shadow-sm border-0 h-100 solution-card">
-                    <div class="card-body">
-                        <div class="solution-icon mb-3">
-                            <i class="fas fa-chalkboard-teacher fa-3x text-warning"></i> <!-- Changed to fa-3x -->
+            <!-- Solution 6 -->
+            <div class="accordion-item solution-accordion-item">
+                <h2 class="accordion-header" id="solutionHeading6">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#solutionCollapse6" aria-expanded="false" aria-controls="solutionCollapse6">
+                        <div class="d-flex align-items-center w-100">
+                            <span class="accordion-number me-3">06</span>
+                            <div class="accordion-icon me-3">
+                                <i class="fas fa-chalkboard-teacher"></i>
+                            </div>
+                            <span class="accordion-title">Workshops & Consultations</span>
                         </div>
-                        <h5 class="card-title fw-bold">Workshops & Consultations</h5>
-                        <p class="card-text">Empower your team with the mindset and tools to embed sustainability in every design decision.</p>
+                        <div class="accordion-arrow ms-auto">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </button>
+                </h2>
+                <div id="solutionCollapse6" class="accordion-collapse collapse" aria-labelledby="solutionHeading6" data-bs-parent="#solutionsAccordion">
+                    <div class="accordion-body">
+                        <p class="solution-detail-description">Empower your team with the mindset and tools to embed sustainability in every design decision.</p>
+                        <ul class="solution-features">
+                            <li><i class="fas fa-check-circle me-2"></i> Sustainable Design Workshops</li>
+                            <li><i class="fas fa-check-circle me-2"></i> Brand Strategy Sessions</li>
+                            <li><i class="fas fa-check-circle me-2"></i> Creative Thinking Training</li>
+                            <li><i class="fas fa-check-circle me-2"></i> One-on-One Consultations</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NEW: Solution 7 - Digital Marketing -->
+            <div class="accordion-item solution-accordion-item">
+                <h2 class="accordion-header" id="solutionHeading7">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#solutionCollapse7" aria-expanded="false" aria-controls="solutionCollapse7">
+                        <div class="d-flex align-items-center w-100">
+                            <span class="accordion-number me-3">07</span>
+                            <div class="accordion-icon me-3">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <span class="accordion-title">Digital Marketing</span>
+                        </div>
+                        <div class="accordion-arrow ms-auto">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </button>
+                </h2>
+                <div id="solutionCollapse7" class="accordion-collapse collapse" aria-labelledby="solutionHeading7" data-bs-parent="#solutionsAccordion">
+                    <div class="accordion-body">
+                        <p class="solution-detail-description">Data-driven digital marketing strategies that help SMEs grow their online presence and drive measurable results. We combine creativity with analytics to maximize your ROI.</p>
+                        <ul class="solution-features">
+                            <li><i class="fas fa-check-circle me-2"></i> Social Media Management</li>
+                            <li><i class="fas fa-check-circle me-2"></i> Content Creation & Strategy</li>
+                            <li><i class="fas fa-check-circle me-2"></i> Campaign Strategy & Analytics</li>
+                            <li><i class="fas fa-check-circle me-2"></i> Email Marketing Automation</li>
+                            <li><i class="fas fa-check-circle me-2"></i> Performance Tracking & Reporting</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NEW: Solution 8 - Sustainable Website Development -->
+            <div class="accordion-item solution-accordion-item">
+                <h2 class="accordion-header" id="solutionHeading8">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#solutionCollapse8" aria-expanded="false" aria-controls="solutionCollapse8">
+                        <div class="d-flex align-items-center w-100">
+                            <span class="accordion-number me-3">08</span>
+                            <div class="accordion-icon me-3">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <span class="accordion-title">Sustainable Website Development</span>
+                        </div>
+                        <div class="accordion-arrow ms-auto">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </button>
+                </h2>
+                <div id="solutionCollapse8" class="accordion-collapse collapse" aria-labelledby="solutionHeading8" data-bs-parent="#solutionsAccordion">
+                    <div class="accordion-body">
+                        <p class="solution-detail-description">Eco-friendly web development solutions that prioritize performance, accessibility, and sustainability. We build fast, efficient websites that minimize environmental impact while maximizing user experience.</p>
+                        <ul class="solution-features">
+                            <li><i class="fas fa-check-circle me-2"></i> Energy-Efficient Web Design</li>
+                            <li><i class="fas fa-check-circle me-2"></i> Green Hosting Solutions</li>
+                            <li><i class="fas fa-check-circle me-2"></i> Performance-Optimized Development</li>
+                            <li><i class="fas fa-check-circle me-2"></i> Sustainable UX/UI Design</li>
+                            <li><i class="fas fa-check-circle me-2"></i> Carbon Footprint Monitoring</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
         
-        <!-- POP-UP BANNER SECTION (PDF Feedback Point 2) -->
+                  <!-- IMAGE BANNER ADVERTISEMENT -->
         <div class="row mt-5">
-            <div class="col-12 text-center">
-                <div class="popup-banner-container position-relative">
-                    <img src="{% static 'images/BRAND PAW BANNER.png' %}" 
-                         alt="Download Banner" 
-                         class="img-fluid rounded shadow-lg popup-banner"
-                         style="max-width: 100%; height: auto;">
-                    <div class="popup-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
-                        
-                    </div>
+            <div class="col-12">
+                <div class="image-banner-container text-center">
+                    <a href="#" class="image-banner-link">
+                        <img src="{% static 'images/BRAND PAW BANNER.png' %}" 
+                             alt="Brand Power Advertisement" 
+                             class="img-fluid rounded shadow-lg image-banner">
+                    </a>
                 </div>
             </div>
         </div>
         
-        <div class="text-center mt-5">
+        <!-- Optional: Keep this if you want the button too -->
+        <div class="text-center mt-4">
             <a href="{% url 'solutions' %}" class="btn btn-outline-dark btn-lg">
                 View All Solutions <i class="fas fa-arrow-right ms-2"></i>
             </a>
         </div>
     </div>
 </section>
+
+
 
 <!-- Stats and Portfolio CTA Section -->
 <section class="py-5 bg-warning text-dark">
@@ -222,7 +447,7 @@
 </section>
 
 <!-- Trusted Clients Section -->
-<section class="py-5" id="clients-section" style="background: #ffffff;">
+<section class="py-5" id="clients-section" style="background: #ffffff; overflow: hidden;">
     <div class="container">
         <div class="row text-center mb-5">
             <div class="col-lg-8 mx-auto">
@@ -231,74 +456,85 @@
             </div>
         </div>
         
-        <div class="row align-items-center justify-content-center g-4 gy-5">
-            <!-- TOP 4 LOGOS (Reorder as requested) -->
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center">
-                <div class="client-logo-container">
-                    <img src="{% static 'images/Gwarimpa.png' %}" alt="Gwarimpa Logo" class="img-fluid" style="max-height: 70px;">
+        <!-- Logo Slider -->
+        <div class="logo-slider">
+            <div class="logo-track" id="logoTrack">
+                <!-- Original 12 logos -->
+                <div class="logo-item">
+                    <img src="{% static 'images/Gwarimpa.png' %}" alt="Gwarimpa Logo">
+                </div>
+                <div class="logo-item">
+                    <img src="{% static 'images/Rivexcel.png' %}" alt="Rivexcel Logo">
+                </div>
+                <div class="logo-item">
+                    <img src="{% static 'images/vb.png' %}" alt="VB Logo">
+                </div>
+                <div class="logo-item">
+                    <img src="{% static 'images/Wura.png' %}" alt="Wura Logo">
+                </div>
+                <div class="logo-item">
+                    <img src="{% static 'images/AHDN LOGO.png' %}" alt="AHDN Logo">
+                </div>
+                <div class="logo-item">
+                    <img src="{% static 'images/BetaDoors.png' %}" alt="BetaDoors Logo">
+                </div>
+                <div class="logo-item">
+                    <img src="{% static 'images/HDInc Logo Official.png' %}" alt="HDInc Logo">
+                </div>
+                <div class="logo-item">
+                    <img src="{% static 'images/Hibare.png' %}" alt="Hibare Logo">
+                </div>
+                <div class="logo-item">
+                    <img src="{% static 'images/Payed Logo-10.png' %}" alt="Payed Logo">
+                </div>
+                <div class="logo-item">
+                    <img src="{% static 'images/ph.png' %}" alt="PH Logo">
+                </div>
+                <div class="logo-item">
+                    <img src="{% static 'images/Transparent LOGO Purple.png' %}" alt="Purple Logo">
+                </div>
+                <div class="logo-item">
+                    <img src="{% static 'images/VA.png' %}" alt="VA Logo" class="light-logo">
+                </div>
+                
+                <!-- Duplicate logos for seamless loop -->
+                <div class="logo-item">
+                    <img src="{% static 'images/Gwarimpa.png' %}" alt="Gwarimpa Logo">
+                </div>
+                <div class="logo-item">
+                    <img src="{% static 'images/Rivexcel.png' %}" alt="Rivexcel Logo">
+                </div>
+                <div class="logo-item">
+                    <img src="{% static 'images/vb.png' %}" alt="VB Logo">
+                </div>
+                <div class="logo-item">
+                    <img src="{% static 'images/Wura.png' %}" alt="Wura Logo">
+                </div>
+                <div class="logo-item">
+                    <img src="{% static 'images/AHDN LOGO.png' %}" alt="AHDN Logo">
+                </div>
+                <div class="logo-item">
+                    <img src="{% static 'images/BetaDoors.png' %}" alt="BetaDoors Logo">
+                </div>
+                <div class="logo-item">
+                    <img src="{% static 'images/HDInc Logo Official.png' %}" alt="HDInc Logo">
+                </div>
+                <div class="logo-item">
+                    <img src="{% static 'images/Hibare.png' %}" alt="Hibare Logo">
+                </div>
+                <div class="logo-item">
+                    <img src="{% static 'images/Payed Logo-10.png' %}" alt="Payed Logo">
+                </div>
+                <div class="logo-item">
+                    <img src="{% static 'images/ph.png' %}" alt="PH Logo">
+                </div>
+                <div class="logo-item">
+                    <img src="{% static 'images/Transparent LOGO Purple.png' %}" alt="Purple Logo">
+                </div>
+                <div class="logo-item">
+                    <img src="{% static 'images/VA.png' %}" alt="VA Logo" class="light-logo">
                 </div>
             </div>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center">
-                <div class="client-logo-container">
-                    <img src="{% static 'images/Rivexcel.png' %}" alt="Rivexcel Logo" class="img-fluid" style="max-height: 70px;">
-                </div>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center">
-                <div class="client-logo-container">
-                    <img src="{% static 'images/vb.png' %}" alt="VB Logo" class="img-fluid" style="max-height: 70px;">
-                </div>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center">
-                <div class="client-logo-container">
-                    <img src="{% static 'images/Wura.png' %}" alt="Wura Logo" class="img-fluid" style="max-height: 70px;">
-                </div>
-            </div>
-            
-            <!-- REST OF THE LOGOS -->
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center">
-                <div class="client-logo-container">
-                    <img src="{% static 'images/AHDN LOGO.png' %}" alt="AHDN Logo" class="img-fluid">
-                </div>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center">
-                <div class="client-logo-container">
-                    <img src="{% static 'images/BetaDoors.png' %}" alt="BetaDoors Logo" class="img-fluid" style="max-height: 70px;">
-                </div>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center">
-                <div class="client-logo-container">
-                    <img src="{% static 'images/HDInc Logo Official.png' %}" alt="HDInc Logo" class="img-fluid" style="max-height: 70px;">
-                </div>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center">
-                <div class="client-logo-container">
-                    <img src="{% static 'images/Hibare.png' %}" alt="Hibare Logo" class="img-fluid" style="max-height: 70px;">
-                </div>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center">
-                <div class="client-logo-container">
-                    <img src="{% static 'images/Payed Logo-10.png' %}" alt="Payed Logo" class="img-fluid" style="max-height: 70px;">
-                </div>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center">
-                <div class="client-logo-container">
-                    <img src="{% static 'images/ph.png' %}" alt="PH Logo" class="img-fluid" style="max-height: 70px;">
-                </div>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center">
-                <div class="client-logo-container">
-                    <img src="{% static 'images/Transparent LOGO Purple.png' %}" alt="Purple Logo" class="img-fluid" style="max-height: 70px;">
-                </div>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center">
-                <div class="client-logo-container">
-                    <img src="{% static 'images/VA.png' %}" alt="VA Logo" class="img-fluid" style="max-height: 70px;">
-                </div>
-            </div>
-        </div>
-        
-        <div class="text-center mt-5">
-            <a href="{% url 'contact' %}" class="btn btn-outline-dark btn-lg">Partner With Us Today</a>
         </div>
     </div>
 </section>
@@ -318,11 +554,10 @@
     </div>
 </section>
 
-
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         // ========================================
-        // TYPING EFFECT: "the Planet" ⇄ "Impact" (INFINITE LOOP)
+        // TYPING EFFECT: "the Planet" ⇄ "Impact" (3 SECONDS)
         // ========================================
         const changingText = document.getElementById('changing-text');
         
@@ -339,18 +574,16 @@
                 const targetText = isImpact ? impactText : planetText;
                 
                 if (!isDeleting && charIndex === targetText.length) {
-                    // Remove blinking cursor but KEEP yellow color for Impact
                     changingText.style.borderRight = 'none';
                     
-                    // Wait 5 seconds before backspacing
+                    // CHANGED: Wait 3 seconds
                     setTimeout(() => {
-                        // Add cursor back before deleting
                         if (isImpact) {
                             changingText.style.borderRight = '3px solid #F0BB13';
                         }
                         isDeleting = true;
                         type();
-                    }, 5000); // 5 second pause
+                    }, 3000); // 3 seconds
                     return;
                 }
                 
@@ -364,12 +597,11 @@
                         isImpact = !isImpact;
                         charIndex = 0;
                         
-                        // Change text color based on which word we're typing
                         if (isImpact) {
-                            changingText.style.color = '#F0BB13'; // Yellow for Impact
+                            changingText.style.color = '#F0BB13';
                             changingText.style.borderRight = '3px solid #F0BB13';
                         } else {
-                            changingText.style.color = 'white'; // White for the Planet
+                            changingText.style.color = 'white';
                             changingText.style.borderRight = 'none';
                         }
                         
@@ -379,7 +611,6 @@
                     
                     setTimeout(type, 80);
                 } else {
-                    // Typing animation
                     if (charIndex < targetText.length) {
                         currentText = targetText.substring(0, charIndex + 1);
                         changingText.textContent = currentText;
@@ -389,19 +620,17 @@
                 }
             }
             
-            // Start after 1.5 seconds
             setTimeout(type, 1500);
         }
 
         // ========================================
         // COUNTING ANIMATION FOR STATS
         // ========================================
-        const statsSection = document.querySelector('.bg-warning'); // The stats section
+        const statsSection = document.querySelector('.bg-warning');
         const statNumbers = document.querySelectorAll('.stat-item h2');
         
-        // Final values for counting
-        const finalValues = [1000, 8, 25]; // Without the "+" sign
-        const durations = [2000, 1500, 1800]; // Duration in milliseconds for each count
+        const finalValues = [1000, 8, 25];
+        const durations = [2000, 1500, 1800];
         let hasAnimated = false;
         
         function animateValue(element, start, end, duration, suffix = '+') {
@@ -411,7 +640,6 @@
                 if (!startTimestamp) startTimestamp = timestamp;
                 const progress = Math.min((timestamp - startTimestamp) / duration, 1);
                 
-                // Easing function for smooth animation
                 const easeOutQuart = 1 - Math.pow(1 - progress, 4);
                 
                 const currentValue = Math.floor(easeOutQuart * (end - start) + start);
@@ -433,30 +661,109 @@
             const sectionTop = statsSection.getBoundingClientRect().top;
             const windowHeight = window.innerHeight;
             
-            // Start animation when section is 80% visible
             if (sectionTop < windowHeight * 0.8) {
                 hasAnimated = true;
                 
-                // Start counting for each stat with delays
                 statNumbers.forEach((stat, index) => {
                     setTimeout(() => {
                         animateValue(stat, 0, finalValues[index], durations[index]);
-                    }, index * 300); // Stagger the animations
+                    }, index * 300);
                 });
                 
-                // Remove the scroll listener after animation
                 window.removeEventListener('scroll', checkStatsVisibility);
             }
         }
         
-        // Listen for scroll to trigger animation
         if (statsSection) {
             window.addEventListener('scroll', checkStatsVisibility);
-            
-            // Also check on page load in case section is already visible
             checkStatsVisibility();
         }
+
+        // ========================================
+        // MOBILE FEATURES CAROUSEL
+        // ========================================
+        const carouselTrack = document.getElementById('featuresCarousel');
+        const slides = document.querySelectorAll('.carousel-slide');
+        const dots = document.querySelectorAll('.dot');
+        const prevBtn = document.querySelector('.carousel-arrow-prev');
+        const nextBtn = document.querySelector('.carousel-arrow-next');
         
-    }); // <-- This is the closing of your existing DOMContentLoaded function
+        let currentSlide = 0;
+        const totalSlides = slides.length;
+        
+        function updateCarousel() {
+            if (!carouselTrack) return;
+            
+            carouselTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === currentSlide);
+            });
+            
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+        
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+        }
+        
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        }
+        
+        if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+        if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+        
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentSlide = index;
+                updateCarousel();
+            });
+        });
+        
+        let carouselInterval = null;
+        if (carouselTrack) {
+            carouselInterval = setInterval(nextSlide, 5000);
+            
+            const carouselContainer = document.querySelector('.features-carousel');
+            if (carouselContainer) {
+                carouselContainer.addEventListener('mouseenter', () => {
+                    if (carouselInterval) clearInterval(carouselInterval);
+                });
+                
+                carouselContainer.addEventListener('mouseleave', () => {
+                    if (carouselInterval) clearInterval(carouselInterval);
+                    carouselInterval = setInterval(nextSlide, 5000);
+                });
+            }
+            
+            let startX = 0;
+            let endX = 0;
+            
+            carouselTrack.addEventListener('touchstart', (e) => {
+                startX = e.touches[0].clientX;
+            });
+            
+            carouselTrack.addEventListener('touchend', (e) => {
+                endX = e.changedTouches[0].clientX;
+                handleSwipe();
+            });
+        }
+        
+        function handleSwipe() {
+            const threshold = 50;
+            
+            if (startX - endX > threshold) {
+                nextSlide();
+            } else if (endX - startX > threshold) {
+                prevSlide();
+            }
+        }
+        
+    });
 </script>
 {% endblock %}
