@@ -3515,3 +3515,166 @@ html {
         padding-bottom: 40px !important;
     }
 }
+
+/* ===================================
+   IPHONE 13 PRO SPECIFIC FIXES
+   =================================== */
+
+/* Fix for iPhone 13 Pro display issues */
+@media only screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3),
+       only screen and (device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) {
+    
+    /* Contact Hero Fix for iPhone 13 */
+    .contact-hero {
+        min-height: 60vh !important;
+        padding-top: 120px !important;
+        padding-bottom: 40px !important;
+    }
+    
+    .contact-hero .container {
+        padding-top: 30px !important;
+        padding-bottom: 30px !important;
+    }
+    
+    .contact-hero h1.display-3 {
+        font-size: 2.5rem !important;
+        line-height: 1.2 !important;
+        margin-bottom: 20px !important;
+        padding-top: 10px !important;
+    }
+    
+    .contact-hero .lead {
+        font-size: 1rem !important;
+        line-height: 1.5 !important;
+        padding: 0 10px !important;
+    }
+    
+    /* Ensure text doesn't overflow */
+    .text-center {
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+    }
+    
+    /* Fix contact form section spacing */
+    section.py-5 {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+}
+
+/* Additional iPhone notch safe area support */
+@supports (padding: max(0px)) {
+    .contact-hero,
+    .hero-section,
+    .about-hero {
+        padding-left: env(safe-area-inset-left) !important;
+        padding-right: env(safe-area-inset-right) !important;
+    }
+    
+    .contact-hero h1 {
+        padding-top: env(safe-area-inset-top) !important;
+    }
+}
+
+/* ===================================
+   CONTACT PAGE SPECIFIC MOBILE FIXES
+   =================================== */
+
+/* Fix for contact info items on mobile */
+@media (max-width: 768px) {
+    .contact-info .contact-item {
+        padding: 15px !important;
+        margin-bottom: 20px !important;
+        text-align: left !important;
+    }
+    
+    .contact-item .contact-icon {
+        width: 45px !important;
+        height: 45px !important;
+        margin-right: 15px !important;
+    }
+    
+    .contact-item h5 {
+        font-size: 1rem !important;
+        margin-bottom: 5px !important;
+    }
+    
+    .contact-item p.text-muted {
+        font-size: 0.9rem !important;
+        line-height: 1.4 !important;
+    }
+}
+
+/* Fix for long email address display */
+.contact-item p.text-muted {
+    word-break: break-all !important;
+    overflow-wrap: break-word !important;
+}
+
+/* Ensure all hero sections have consistent spacing */
+.contact-hero,
+.about-hero {
+    display: flex !important;
+    align-items: center !important;
+    min-height: 50vh !important;
+}
+
+.contact-hero .container,
+.about-hero .container {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* Fix for the line break issue in contact hero */
+.contact-hero .lead span.d-none.d-md-inline {
+    display: inline !important;
+}
+
+@media (max-width: 768px) {
+    .contact-hero .lead span.d-none.d-md-inline {
+        display: none !important;
+    }
+    
+    .contact-hero .lead span.d-md-none {
+        display: inline !important;
+    }
+}
+
+/* ===================================
+   UNIVERSAL IPHONE FIX
+   =================================== */
+
+/* This will fix ALL iPhones including 13 Pro */
+@media (max-width: 430px) {
+    /* Hero text adjustments */
+    .display-3 {
+        font-size: 2.2rem !important;
+        line-height: 1.2 !important;
+        padding: 0 10px !important;
+    }
+    
+    /* Prevent text overflow */
+    .text-white h1,
+    .text-white p {
+        max-width: 100% !important;
+        overflow: visible !important;
+    }
+    
+    /* Contact form container */
+    .card-body.p-5 {
+        padding: 1.5rem !important;
+    }
+    
+    /* Button sizing */
+    .btn-lg {
+        padding: 12px 20px !important;
+        font-size: 1rem !important;
+        width: 100% !important;
+    }
+    
+    /* Social buttons fix */
+    .social-links .btn {
+        width: 40px !important;
+        height: 40px !important;
+    }
+}
