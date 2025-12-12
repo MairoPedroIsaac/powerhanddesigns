@@ -51,7 +51,8 @@
 <section class="py-5 bg-light">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-lg-4 mb-4 mb-lg-0">
+            <!-- CEO Image - Will appear SECOND on desktop, FIRST on mobile -->
+            <div class="col-lg-4 mb-4 mb-lg-0 order-2 order-lg-1">
                 <div class="ceo-image-container position-relative">
                     <img src="{% static 'images/aaa-1[1].png' %}" 
                          alt="Augustine Moses - Founder & CEO" 
@@ -64,7 +65,8 @@
                 </div>
             </div>
             
-            <div class="col-lg-8 ps-lg-5">
+            <!-- Quote - Will appear FIRST on desktop, SECOND on mobile -->
+            <div class="col-lg-8 ps-lg-5 order-1 order-lg-2">
                 <div class="quote-container position-relative pop-up">
                     
                     <div class="position-relative z-2" style="padding: 50px 40px 30px 50px;">
