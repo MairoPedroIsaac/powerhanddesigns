@@ -3012,13 +3012,13 @@ html {
     
     .mobile-banner {
         display: block; /* Show mobile banner */
-        max-height: 180px;
+        max-height: 250px !important; 
     }
 }
 
 @media (max-width: 576px) {
     .mobile-banner {
-        max-height: 150px; /* Even shorter on small phones */
+        max-height: 220px !important; /* Even shorter on small phones */
     }
 }
 
