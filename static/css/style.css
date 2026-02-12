@@ -1765,21 +1765,7 @@ html {
     border-radius: 2px;
 }
 
-/* Contact Form Enhancements */
-.contact-info .contact-item {
-    padding: 20px;
-    border-left: 4px solid #F0BB13;
-    background: #f8f9fa;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    margin-bottom: 1.5rem;
-}
 
-.contact-info .contact-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    background: white;
-}
 
 .contact-icon {
     width: 50px;
@@ -1787,22 +1773,6 @@ html {
     flex-shrink: 0;
 }
 
-.contact-info .social-links .btn {
-    width: 45px;
-    height: 45px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    transition: all 0.3s ease;
-}
-
-.contact-info .social-links .btn:hover {
-    background: #F0BB13;
-    border-color: #F0BB13;
-    color: #000000;
-    transform: translateY(-3px);
-}
 
 /* Form Styling */
 .form-control,
@@ -4199,5 +4169,346 @@ a[href^="tel:"] {
     
     .mv-description {
         font-size: 0.95rem;
+    }
+}
+
+/* ===================================
+   FAQ SECTION STYLES
+   =================================== */
+
+.faq-section {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.faq-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.faq-label {
+    color: #F0BB13;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.faq-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+/* FAQ Accordion */
+.faq-accordion {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: white;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    box-shadow: 0 8px 25px rgba(240, 187, 19, 0.1);
+}
+
+.faq-question {
+    background: white;
+    border: none;
+    padding: 25px 30px;
+    width: 100%;
+    text-align: left;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #000000;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.faq-question:hover {
+    background: #fafafa;
+}
+
+.faq-question.active {
+    background: #f8f9fa;
+    border-bottom: 2px solid #F0BB13;
+}
+
+.faq-icon {
+    width: 30px;
+    height: 30px;
+    background: #F0BB13;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    margin-left: 20px;
+}
+
+.faq-icon i {
+    font-size: 1rem;
+    color: #000000;
+}
+
+.faq-question.active .faq-icon {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    background: #fafafa;
+}
+
+.faq-answer.active {
+    max-height: 500px;
+    padding: 25px 30px;
+}
+
+.faq-answer p {
+    margin: 0;
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .faq-section {
+        padding: 60px 0;
+    }
+    
+    .faq-title {
+        font-size: 2rem;
+    }
+    
+    .faq-question {
+        padding: 20px;
+        font-size: 1.05rem;
+    }
+    
+    .faq-icon {
+        width: 25px;
+        height: 25px;
+        margin-left: 15px;
+    }
+    
+    .faq-answer.active {
+        padding: 20px;
+    }
+    
+    .faq-answer p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .faq-question {
+        padding: 18px;
+        font-size: 1rem;
+    }
+    
+    .faq-answer.active {
+        padding: 18px;
+    }
+}
+
+/* ===================================
+   CONTACT FORM ONLY - REMOVE HOVER EFFECTS (INFO SIDE KEEPS EFFECTS)
+   =================================== */
+
+/* Remove hover effects from form button ONLY */
+.contact-form-card .btn-warning {
+    background-color: #F0BB13;
+    color: #000000;
+    font-weight: 700;
+    border: none;
+    transition: none !important;
+    transform: none !important;
+    animation: none !important;
+}
+
+.contact-form-card .btn-warning:hover {
+    background-color: #F0BB13 !important;
+    color: #000000 !important;
+    transform: none !important;
+    box-shadow: none !important;
+    animation: none !important;
+}
+
+/* Remove transitions from form fields */
+.contact-form-card .form-control,
+.contact-form-card .form-select {
+    border: 2px solid #e0e0e0;
+    transition: none !important;
+}
+
+.contact-form-card .form-control:focus,
+.contact-form-card .form-select:focus {
+    border-color: #F0BB13;
+    box-shadow: 0 0 0 0.2rem rgba(240, 187, 19, 0.25);
+    outline: none;
+}
+
+/* Remove hover effect from form card */
+.contact-form-card {
+    transition: none !important;
+}
+
+.contact-form-card:hover {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* Keep ALL contact info hover effects INTACT */
+/* DO NOT TOUCH .contact-info .contact-item:hover - Keep it! */
+/* DO NOT TOUCH .contact-info .social-links .btn:hover - Keep it! */
+
+/* ===================================
+   MODERN FORM CARD DESIGN - ADD THIS
+   =================================== */
+
+/* Modern Form Card Container */
+.contact-form-card {
+    background: white;
+    border-radius: 24px !important;  /* Larger curve for modern look */
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);  /* Soft shadow */
+    border: 1px solid rgba(0, 0, 0, 0.05);  /* Subtle border */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Form title styling */
+.contact-form-card h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.contact-form-card h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: #F0BB13;
+    border-radius: 2px;
+}
+
+/* Form fields - Modern styling */
+.contact-form-card .form-label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.contact-form-card .form-control,
+.contact-form-card .form-select {
+    border: 2px solid #e0e0e0;
+    border-radius: 12px !important;  /* Rounded corners */
+    padding: 14px 18px;
+    font-size: 1rem;
+    transition: none !important;
+    background-color: #fafafa;
+}
+
+.contact-form-card .form-control:focus,
+.contact-form-card .form-select:focus {
+    border-color: #F0BB13;
+    box-shadow: 0 0 0 4px rgba(240, 187, 19, 0.1);
+    background-color: white;
+    outline: none;
+}
+
+/* Modern button styling */
+.contact-form-card .btn-warning {
+    background: linear-gradient(135deg, #F0BB13, #ffd54f);
+    color: #000000;
+    font-weight: 700;
+    padding: 16px 35px;
+    border-radius: 50px !important;  /* Pill shape button */
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    border: none;
+    transition: none !important;
+    transform: none !important;
+    box-shadow: 0 10px 20px rgba(240, 187, 19, 0.2);
+}
+
+.contact-form-card .btn-warning i {
+    margin-right: 10px;
+}
+
+/* Remove hover effects completely */
+.contact-form-card .btn-warning:hover {
+    background: linear-gradient(135deg, #F0BB13, #ffd54f) !important;
+    color: #000000 !important;
+    transform: none !important;
+    box-shadow: 0 10px 20px rgba(240, 187, 19, 0.2) !important;
+}
+
+/* Placeholder styling */
+.contact-form-card .form-control::placeholder,
+.contact-form-card .form-select::placeholder {
+    color: #999;
+    font-size: 0.95rem;
+}
+
+/* Input group spacing */
+.contact-form-card .row.g-3 {
+    margin-top: 0;
+}
+
+.contact-form-card .row.g-3 > div {
+    margin-bottom: 5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .contact-form-card {
+        padding: 30px 25px;
+        border-radius: 20px !important;
+    }
+    
+    .contact-form-card h3 {
+        font-size: 1.5rem;
+    }
+    
+    .contact-form-card .form-control,
+    .contact-form-card .form-select {
+        padding: 12px 16px;
+    }
+    
+    .contact-form-card .btn-warning {
+        padding: 14px 30px;
+        width: 100%;  /* Full width button on mobile */
+    }
+}
+
+@media (max-width: 576px) {
+    .contact-form-card {
+        padding: 25px 20px;
+        border-radius: 16px !important;
     }
 }

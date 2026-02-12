@@ -10,13 +10,13 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-10 text-center text-white">
-                  <h1 class="display-3 fw-bold mb-4">Let's Create Something Amazing</h1>
-                  <p class="lead mb-4">
-                      Ready to transform your brand? Get in touch with us and let's discuss 
-                      <span class="d-none d-md-inline"><br></span>
-                      <span class="d-md-none"> </span>
-                       how we can bring your vision to life.
-                  </p>
+                <h1 class="display-3 fw-bold mb-4">Let's Create Something Amazing</h1>
+                <p class="lead mb-4">
+                    Ready to transform your brand? Get in touch with us and let's discuss
+                    <span class="d-none d-md-inline"><br></span>
+                    <span class="d-md-none"> </span>
+                    how we can bring your vision to life.
+                </p>
             </div>
         </div>
     </div>
@@ -26,90 +26,83 @@
 <section class="py-5">
     <div class="container">
         <div class="row g-5">
+
             <!-- Contact Form -->
-<div class="col-lg-8">
-    <div class="card border-0 shadow-lg">
-        <div class="card-body p-5">
-            <h3 class="fw-bold mb-4">Send us a Message</h3>
-            
-            <!-- Success Message -->
-            {% if messages %}
-                {% for message in messages %}
-                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        {{ message }}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-                    </div>
-                {% endfor %}
-            {% endif %}
-            
-            <form method="POST">
-                {% csrf_token %}
-                
-                <div class="row g-3">
-                    <!-- Name Field -->
-                    <div class="col-12">
-                        <label for="id_name" class="form-label">Full Name *</label>
-                        {{ form.name }}
-                    </div>
-                    
-                    <!-- Email & Phone -->
-                    <div class="col-md-6">
-                        <label for="id_email" class="form-label">Email Address *</label>
-                        {{ form.email }}
-                        {% if form.email.errors %}
-                            <div class="text-danger small">{{ form.email.errors }}</div>
-                        {% endif %}
-                    </div>
-                    <div class="col-md-6">
-                        <label for="id_phone" class="form-label">Phone Number *</label>
-                        {{ form.phone }}
-                        {% if form.phone.errors %}
-                            <div class="text-danger small">{{ form.phone.errors }}</div>
-                        {% endif %}
-                    </div>
-                    
-                    <!-- Company -->
-                    <div class="col-12">
-                        <label for="id_company" class="form-label">Company Name</label>
-                        {{ form.company }}
-                    </div>
-                    
-                    <!-- Service Interest -->
-<div class="col-12">
-    <label for="id_subject" class="form-label">What are you interested in? *</label>
-    {{ form.subject }}
-    {% if form.subject.errors %}
-        <div class="text-danger small">{{ form.subject.errors }}</div>
-    {% endif %}
-</div>
-                    
-                    <!-- Message -->
-                    <div class="col-12">
-                        <label for="id_message" class="form-label">Your Message *</label>
-                        {{ form.message }}
-                        {% if form.message.errors %}
-                            <div class="text-danger small">{{ form.message.errors }}</div>
-                        {% endif %}
-                    </div>
-                    
-                    <!-- Submit Button -->
-                    <div class="col-12">
-                        <button type="submit" class="btn btn-warning btn-lg px-5 py-3 fw-bold">
-                            <i class="fas fa-paper-plane me-2"></i>Send Message
-                        </button>
-                    </div>
+            <div class="col-lg-8">
+                <div class="contact-form-card">
+                    <h3 class="fw-bold mb-4">Send us a Message</h3>
+
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                {{ message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="row g-3">
+
+                            <div class="col-12">
+                                <label for="id_name" class="form-label">Full Name *</label>
+                                {{ form.name }}
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="id_email" class="form-label">Email Address *</label>
+                                {{ form.email }}
+                                {% if form.email.errors %}
+                                    <div class="text-danger small">{{ form.email.errors }}</div>
+                                {% endif %}
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="id_phone" class="form-label">Phone Number *</label>
+                                {{ form.phone }}
+                                {% if form.phone.errors %}
+                                    <div class="text-danger small">{{ form.phone.errors }}</div>
+                                {% endif %}
+                            </div>
+
+                            <div class="col-12">
+                                <label for="id_company" class="form-label">Company Name</label>
+                                {{ form.company }}
+                            </div>
+
+                            <div class="col-12">
+                                <label for="id_subject" class="form-label">What are you interested in? *</label>
+                                {{ form.subject }}
+                                {% if form.subject.errors %}
+                                    <div class="text-danger small">{{ form.subject.errors }}</div>
+                                {% endif %}
+                            </div>
+
+                            <div class="col-12">
+                                <label for="id_message" class="form-label">Your Message *</label>
+                                {{ form.message }}
+                                {% if form.message.errors %}
+                                    <div class="text-danger small">{{ form.message.errors }}</div>
+                                {% endif %}
+                            </div>
+
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-warning btn-lg px-5 py-3 fw-bold">
+                                    <i class="fas fa-paper-plane me-2"></i>Send Message
+                                </button>
+                            </div>
+
+                        </div>
+                    </form>
                 </div>
-            </form>
-        </div>
-    </div>
-</div>
+            </div>
 
             <!-- Contact Information -->
             <div class="col-lg-4">
                 <div class="contact-info">
                     <h3 class="fw-bold mb-4 text-black">Get in Touch</h3>
-                    
-                    <!-- Contact Item 1 -->
+
                     <div class="contact-item d-flex mb-4">
                         <div class="contact-icon bg-warning rounded-circle d-flex align-items-center justify-content-center me-4">
                             <i class="fas fa-envelope text-white"></i>
@@ -120,7 +113,6 @@
                         </div>
                     </div>
 
-                    <!-- Contact Item 2 -->
                     <div class="contact-item d-flex mb-4">
                         <div class="contact-icon bg-warning rounded-circle d-flex align-items-center justify-content-center me-4">
                             <i class="fas fa-phone text-white"></i>
@@ -132,18 +124,16 @@
                         </div>
                     </div>
 
-                    <!-- Contact Item 3 -->
-                       <div class="contact-item d-flex mb-4">
-    <div class="contact-icon bg-warning rounded-circle d-flex align-items-center justify-content-center me-4">
-        <i class="fas fa-map-marker-alt text-white"></i>
-    </div>
-    <div>
-        <h5 class="fw-bold mb-1">Portharcourt Address</h5>
-        <p class="text-muted mb-0">No 9 Eke Street off NTA Rd,<br>Port Harcourt, Rivers State, Nigeria.</p>
-    </div>
-</div>
-                      
-                    <!-- Contact Item 4 -->
+                    <div class="contact-item d-flex mb-4">
+                        <div class="contact-icon bg-warning rounded-circle d-flex align-items-center justify-content-center me-4">
+                            <i class="fas fa-map-marker-alt text-white"></i>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold mb-1">Portharcourt Address</h5>
+                            <p class="text-muted mb-0">No 9 Eke Street off NTA Rd,<br>Port Harcourt, Rivers State, Nigeria.</p>
+                        </div>
+                    </div>
+
                     <div class="contact-item d-flex mb-4">
                         <div class="contact-icon bg-warning rounded-circle d-flex align-items-center justify-content-center me-4">
                             <i class="fas fa-map-marker-alt text-white"></i>
@@ -154,26 +144,26 @@
                         </div>
                     </div>
 
-                     <!-- Social Media -->
-<div class="social-section mt-5 text-start">
-    <h5 class="fw-bold mb-3">Follow Us</h5>
-    <div class="social-links">
-    <a href="https://www.instagram.com/branded_bypowerhand/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark btn-lg rounded-circle me-2">
-        <i class="fab fa-instagram"></i>
-    </a>
-    <a href="https://wa.me/2347039053411" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark btn-lg rounded-circle me-2">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-    <a href="https://www.linkedin.com/company/powerhand-designs" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark btn-lg rounded-circle me-2">
-        <i class="fab fa-linkedin"></i>
-    </a>
-    <a href="https://www.facebook.com/augustine.moses.180/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark btn-lg rounded-circle">
-        <i class="fab fa-facebook"></i>
-    </a>
-</div>
-</div>
+                    <div class="social-section mt-5 text-start">
+                        <h5 class="fw-bold mb-3">Follow Us</h5>
+                        <div class="social-links">
+                            <a href="https://www.instagram.com/branded_bypowerhand/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark btn-lg rounded-circle me-2">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://wa.me/2347039053411" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark btn-lg rounded-circle me-2">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/company/powerhand-designs" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark btn-lg rounded-circle me-2">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="https://www.facebook.com/augustine.moses.180/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark btn-lg rounded-circle">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
+
         </div>
     </div>
 </section>
@@ -190,14 +180,66 @@
         <div class="row justify-content-center">
             <div class="col-lg-10">
                 <div class="calendly-container">
-                    <!-- Calendly inline widget begin -->
-                    <div class="calendly-inline-widget" 
-                         data-url="{{ calendly_url }}" 
+                    <div class="calendly-inline-widget"
+                         data-url="{{ calendly_url }}"
                          style="min-width:320px;height:700px;">
                     </div>
-                    <!-- Calendly inline widget end -->
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq-section">
+    <div class="container">
+        <div class="faq-header">
+            <p class="faq-label">FAQ</p>
+            <h2 class="faq-title">Common Questions</h2>
+        </div>
+
+        <div class="faq-accordion">
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <span>How long does a typical branding project take?</span>
+                    <div class="faq-icon"><i class="fas fa-chevron-down"></i></div>
+                </button>
+                <div class="faq-answer">
+                    <p>Most BrandPaw™ identity projects take 4-8 weeks depending on scope. We'll provide a detailed timeline during our initial consultation.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Do you work with businesses outside of Africa?</span>
+                    <div class="faq-icon"><i class="fas fa-chevron-down"></i></div>
+                </button>
+                <div class="faq-answer">
+                    <p>While our focus is Pan-African businesses, we welcome clients globally who share our commitment to sustainable design.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <span>What makes your approach sustainable?</span>
+                    <div class="faq-icon"><i class="fas fa-chevron-down"></i></div>
+                </button>
+                <div class="faq-answer">
+                    <p>We consider environmental impact at every stage - from material choices to production methods, digital optimization, and circular design principles.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Can you help with just one aspect of branding?</span>
+                    <div class="faq-icon"><i class="fas fa-chevron-down"></i></div>
+                </button>
+                <div class="faq-answer">
+                    <p>Absolutely! While we offer comprehensive packages, we also provide individual services like logo design, packaging, or digital marketing.</p>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
@@ -216,9 +258,26 @@
         </div>
     </div>
 </section>
+
 {% endblock %}
 
 {% block extra_js %}
-<!-- Calendly embed script -->
 <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<script>
+    function toggleFAQ(button) {
+        var answer = button.nextElementSibling;
+        var allQuestions = document.querySelectorAll('.faq-question');
+        var allAnswers = document.querySelectorAll('.faq-answer');
+
+        allQuestions.forEach(function(q) {
+            if (q !== button) q.classList.remove('active');
+        });
+        allAnswers.forEach(function(a) {
+            if (a !== answer) a.classList.remove('active');
+        });
+
+        button.classList.toggle('active');
+        answer.classList.toggle('active');
+    }
+</script>
 {% endblock %}
