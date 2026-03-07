@@ -9,4 +9,5 @@ urlpatterns = [
     path('portfolio/', views.portfolio_view, name='portfolio'),
     path('portfolio/<slug:slug>/', views.portfolio_detail_view, name='portfolio_detail'),
     path('contact/', views.contact_view, name='contact'),
+    path('collective/', views.collective, name='collective'),
 ]

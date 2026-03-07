@@ -1,21 +1,25 @@
 # main/views.py
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.http import JsonResponse
 from django.contrib import messages
 from django.core.mail import send_mail
 from django.conf import settings
-from .models import Project, ContactSubmission
-from .forms import ContactForm
+from .models import Project, ContactSubmission, CollectiveApplication
+from .forms import ContactForm, CollectiveApplicationForm
+
 
 def home_view(request):
     featured_projects = Project.objects.filter(is_featured=True)[:3]
     return render(request, 'home.html', {'featured_projects': featured_projects})
 
+
 def about(request):
     return render(request, 'about.html')
 
+
 def solutions(request):
     return render(request, 'solutions.html')
+
 
 def contact_view(request):
     if request.method == 'POST':
@@ -51,8 +55,9 @@ def contact_view(request):
     
     return render(request, 'contact.html', {
         'form': form,
-        'calendly_url': 'https://calendly.com/your-username'  # Replace with your actual Calendly URL
+        'calendly_url': 'https://calendly.com/your-username'
     })
+
 
 def portfolio_view(request):
     projects = Project.objects.all()
@@ -67,6 +72,7 @@ def portfolio_view(request):
         'categories': categories,
     }
     return render(request, 'portfolio.html', context)
+
 
 def portfolio_detail_view(request, slug):
     project = get_object_or_404(Project, slug=slug)
@@ -83,3 +89,17 @@ def portfolio_detail_view(request, slug):
         'related_projects': related_projects,
     }
     return render(request, 'portfolio_detail.html', context)
+
+
+def collective(request):
+    if request.method == 'POST':
+        form = CollectiveApplicationForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return render(request, 'collective.html', {'form': CollectiveApplicationForm(), 'submitted': True})
+        else:
+            return render(request, 'collective.html', {'form': form, 'submitted': False})
+    else:
+        form = CollectiveApplicationForm()
+
+    return render(request, 'collective.html', {'form': form, 'submitted': False})
