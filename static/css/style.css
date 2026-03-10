@@ -352,21 +352,21 @@ footer .contact-item:hover .text-light {
 /* Responsive Footer */
 @media (max-width: 768px) {
     footer .row > div {
-        text-align: center;
+        text-align: left;
         margin-bottom: 2.5rem;
     }
     
     footer h4::after {
-        left: 50%;
-        transform: translateX(-50%);
+        left: 0;
+        transform: none;
     }
     
     .social-links {
-        justify-content: center;
+        justify-content: flex-start;
     }
     
     footer .contact-item .d-flex {
-        justify-content: center;
+        justify-content: flex-start;
     }
     
     footer .contact-item:hover {

@@ -1,8 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-
 {% block title %}Powerhand Collective — Pilot Cohort May 2026{% endblock %}
-
 {% block content %}
 
 <!-- =====================
@@ -10,10 +8,10 @@
      ===================== -->
 <section class="collective-hero">
   <div class="container">
-    <div class="row align-items-center min-vh-section">
+    <div class="row align-items-center">
 
-      <!-- Left: Text -->
-      <div class="col-lg-5 col-md-12 collective-hero-text">
+      <!-- Left: Text (full width on mobile, 5 cols on desktop) -->
+      <div class="col-12 col-lg-5 collective-hero-text">
         <p class="collective-eyebrow">PILOT COHORT — MAY 2026</p>
         <h1 class="collective-hero-title">
           Powerhand<br>
@@ -51,8 +49,23 @@
         </div>
       </div>
 
-      <!-- Right: Image Grid -->
-      <div class="col-lg-7 col-md-12 collective-hero-grid">
+      <!-- Mobile Hero Image — shown below text on mobile only -->
+      <div class="col-12 d-block d-lg-none collective-hero-mobile-img">
+        <div class="mobile-grid-layout">
+          <div class="mg-main">
+            <img src="{% static 'images/Hero-1.png' %}" alt="Creative professional at work" class="mg-img">
+          </div>
+          <div class="mg-right">
+            <div class="mg-gold-block"></div>
+            <div class="mg-secondary">
+              <img src="{% static 'images/Hero-image-2.png' %}" alt="Creative with camera" class="mg-img">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Image Grid — desktop only -->
+      <div class="col-lg-7 d-none d-lg-block collective-hero-grid">
         <div class="hero-grid-layout">
           <div class="hg-main">
             <img src="{% static 'images/Hero-1.png' %}" alt="Creative professional at work" class="hg-img">
@@ -61,7 +74,6 @@
           <div class="hg-secondary">
             <img src="{% static 'images/Hero-image-2.png' %}" alt="Creative with camera" class="hg-img">
           </div>
-          <div class="hg-yellow-block"></div>
         </div>
       </div>
 
@@ -134,7 +146,6 @@
     </p>
 
     <div class="standards-list">
-
       <div class="standard-item">
         <span class="standard-num">01</span>
         <div>
@@ -142,7 +153,6 @@
           <p class="standard-desc">Mastery of your craft and ability to deliver quality output consistently.</p>
         </div>
       </div>
-
       <div class="standard-item">
         <span class="standard-num">02</span>
         <div>
@@ -150,7 +160,6 @@
           <p class="standard-desc">Understanding the why behind every creative decision.</p>
         </div>
       </div>
-
       <div class="standard-item">
         <span class="standard-num">03</span>
         <div>
@@ -158,7 +167,6 @@
           <p class="standard-desc">Showing up prepared, meeting deadlines, and maintaining high standards.</p>
         </div>
       </div>
-
       <div class="standard-item">
         <span class="standard-num">04</span>
         <div>
@@ -166,7 +174,6 @@
           <p class="standard-desc">Clear, professional, and intentional in every interaction.</p>
         </div>
       </div>
-
       <div class="standard-item">
         <span class="standard-num">05</span>
         <div>
@@ -174,7 +181,6 @@
           <p class="standard-desc">A deep resonance with the Powerhand ethos and vision.</p>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -202,16 +208,17 @@
       </div>
 
       {% else %}
+
       <!-- FORM ERRORS (if any) -->
       {% if form.non_field_errors %}
-      <div class="apply-error-msg mb-4">
+      <div class="apply-error-msg mb-4" id="formErrors">
         {% for error in form.non_field_errors %}
           <p class="mb-1">⚠ {{ error }}</p>
         {% endfor %}
       </div>
       {% endif %}
 
-      <form method="POST" enctype="multipart/form-data" novalidate>
+      <form method="POST" enctype="multipart/form-data" novalidate id="applyForm">
         {% csrf_token %}
         <div class="row g-4">
 
@@ -318,8 +325,6 @@
   pointer-events: none;
 }
 
-.min-vh-section { min-height: 80vh; }
-
 .collective-eyebrow {
   color: #F0BB13;
   font-size: 0.78rem;
@@ -375,9 +380,58 @@
 
 /* Hero CTA Buttons */
 .collective-hero-btns { display: flex; flex-wrap: wrap; gap: 12px; }
-.collective-hero-btns .btn { border-radius: 6px !important; font-size: 0.85rem; letter-spacing: 1.5px; }
+.collective-hero-btns .btn {
+  border-radius: 6px !important;
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
+}
 
-/* ---- Hero Image Grid ---- */
+/* ---- Mobile Hero Image Grid ---- */
+.collective-hero-mobile-img {
+  margin-top: 40px;
+}
+
+.mobile-grid-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  height: 280px;
+}
+
+.mg-main {
+  border-radius: 14px;
+  overflow: hidden;
+  height: 100%;
+}
+
+.mg-right {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 100%;
+}
+
+.mg-gold-block {
+  background: #5a4a00;
+  border-radius: 12px;
+  flex: 1;
+}
+
+.mg-secondary {
+  border-radius: 12px;
+  overflow: hidden;
+  flex: 1.4;
+}
+
+.mg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(100%);
+}
+
+/* ---- Hero Image Grid (desktop) ---- */
 .collective-hero-grid { padding-left: 40px; }
 
 .hero-grid-layout {
@@ -409,8 +463,6 @@
   border-radius: 14px;
   overflow: hidden;
 }
-
-.hg-yellow-block { display: none; }
 
 .hg-img {
   width: 100%;
@@ -743,43 +795,70 @@
   font-size: 0.9rem;
 }
 
-/* ---- Responsive ---- */
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+
 @media (max-width: 991px) {
-  .collective-hero-grid { padding-left: 0; margin-top: 50px; }
   .collab-img-wrap { aspect-ratio: 16/8; }
-  .hero-grid-layout { max-width: 500px; margin: 0 auto; }
 }
 
 @media (max-width: 768px) {
-  .collective-hero { padding: 100px 0 60px; }
-  .collective-hero-title { font-size: 3rem; }
+  .collective-hero {
+    min-height: auto;
+    padding: 100px 0 50px;
+  }
+  .collective-hero-title { font-size: 2.6rem; }
   .collective-countdown { gap: 18px; }
   .countdown-num { font-size: 1.8rem; }
-  .collab-img-wrap { aspect-ratio: 16/9; }
-  .collab-title { font-size: 1.5rem; }
-  .collab-overlay { padding: 24px; }
-  .collective-about, .collective-standards, .collective-apply { padding: 60px 0; }
+  .collab-banner { padding: 20px 16px; }
+  .collab-img-wrap { aspect-ratio: 16/10; border-radius: 12px; }
+  .collab-title { font-size: 1.1rem; }
+  .collab-sub { font-size: 0.78rem; line-height: 1.4; }
+  .collab-overlay { padding: 16px; }
+  .collective-about,
+  .collective-standards,
+  .collective-apply { padding: 60px 0; }
   .collective-exp-card { padding: 28px; }
   .standard-item { padding: 22px 20px; flex-direction: column; gap: 10px; }
   .apply-upload { padding: 24px; }
   .apply-submit-btn { width: 100%; }
   .apply-success-card { padding: 50px 24px; }
+  .mobile-grid-layout { height: 240px; }
 }
 
 @media (max-width: 576px) {
-  .collective-hero-title { font-size: 2.4rem; }
+  .collective-hero {
+    padding: 88px 0 40px;
+    min-height: auto;
+  }
+  .collective-hero-title { font-size: 2.2rem; }
+  .collective-hero-sub { font-size: 0.95rem; }
+  .collective-countdown { gap: 14px; }
+  .countdown-num { font-size: 1.6rem; }
+  .countdown-label { font-size: 0.6rem; }
   .collective-section-title { font-size: 1.8rem; }
-  .hero-grid-layout { grid-template-columns: 1fr 1fr; }
-  .hg-main { grid-column: 1; grid-row: 1; aspect-ratio: auto; height: 220px; }
-  .hg-gold-block { min-height: 100px; }
-  .hg-secondary { height: 220px; }
+  .collab-img-wrap { aspect-ratio: 16/11; }
+  .collab-title { font-size: 1rem; }
+  .collab-overlay { padding: 14px; }
+  .mobile-grid-layout { height: 200px; }
 }
 </style>
 
 <script>
-// ---- Auto scroll to apply section on success ----
+// ---- Scroll to apply section if form has errors ----
 (function() {
   var applySection = document.getElementById('apply');
+  var applyForm    = document.getElementById('applyForm');
+  var formErrors   = document.getElementById('formErrors');
+  var hasFieldErrors = document.querySelectorAll('.apply-field-error').length > 0;
+
+  if (applySection && applyForm && (formErrors || hasFieldErrors)) {
+    setTimeout(function() {
+      applySection.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
+  }
+
   var successCard = document.querySelector('.apply-success-card');
   if (applySection && successCard) {
     applySection.scrollIntoView({ behavior: 'smooth' });
