@@ -81,12 +81,12 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST = 'smtp.zoho.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'mosesaugustine25@gmail.com'
+EMAIL_HOST_USER = 'info@powerhanddesigns.com'
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
-DEFAULT_FROM_EMAIL = 'hello@powerhanddesigns.com'
-CONTACT_EMAIL = 'hello@powerhanddesigns.com'
+DEFAULT_FROM_EMAIL = 'info@powerhanddesigns.com'
+CONTACT_EMAIL = 'info@powerhanddesigns.com'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
