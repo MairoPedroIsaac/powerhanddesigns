@@ -1,4 +1,5 @@
 # main/views.py
+import threading
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import JsonResponse
 from django.contrib import messages
@@ -6,6 +7,23 @@ from django.core.mail import send_mail
 from django.conf import settings
 from .models import Project, ContactSubmission, CollectiveApplication
 from .forms import ContactForm, CollectiveApplicationForm
+
+
+def send_mail_async(subject, message, from_email, recipient_list):
+    def _send():
+        try:
+            send_mail(
+                subject=subject,
+                message=message,
+                from_email=from_email,
+                recipient_list=recipient_list,
+                fail_silently=True,
+            )
+        except Exception as e:
+            print(f"Email sending failed: {e}")
+    thread = threading.Thread(target=_send)
+    thread.daemon = True
+    thread.start()
 
 
 def home_view(request):
@@ -27,10 +45,9 @@ def contact_view(request):
         if form.is_valid():
             contact_submission = form.save()
 
-            try:
-                send_mail(
-                    subject=f'New Contact Form Submission: {contact_submission.get_subject_display()}',
-                    message=f'''New contact form submission received:
+            send_mail_async(
+                subject=f'New Contact Form Submission: {contact_submission.get_subject_display()}',
+                message=f'''New contact form submission received:
 
 Name: {contact_submission.name}
 Email: {contact_submission.email}
@@ -39,12 +56,9 @@ Company: {contact_submission.company}
 Subject: {contact_submission.get_subject_display()}
 Message: {contact_submission.message}
 ''',
-                    from_email=settings.DEFAULT_FROM_EMAIL,
-                    recipient_list=[settings.CONTACT_EMAIL],
-                    fail_silently=False,
-                )
-            except Exception as e:
-                print(f"Email sending failed: {e}")
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                recipient_list=[settings.CONTACT_EMAIL],
+            )
 
             messages.success(request, 'Thank you for your message! We will get back to you soon.')
             return render(request, 'contact.html', {'form': ContactForm()})
@@ -92,10 +106,9 @@ def collective(request):
         if form.is_valid():
             application = form.save()
 
-            try:
-                send_mail(
-                    subject=f'New Collective Application: {application.full_name}',
-                    message=f'''New Collective application received:
+            send_mail_async(
+                subject=f'New Collective Application: {application.full_name}',
+                message=f'''New Collective application received:
 
 Full Name: {application.full_name}
 Email: {application.email}
@@ -105,12 +118,9 @@ Why They Want to Join: {application.why_join}
 Portfolio Link: {application.portfolio_link or "Not provided"}
 Sample Work: {"Uploaded" if application.sample_work else "Not uploaded"}
 ''',
-                    from_email=settings.DEFAULT_FROM_EMAIL,
-                    recipient_list=[settings.CONTACT_EMAIL],
-                    fail_silently=False,
-                )
-            except Exception as e:
-                print(f"Email sending failed: {e}")
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                recipient_list=[settings.CONTACT_EMAIL],
+            )
 
             return render(request, 'collective.html', {
                 'form': CollectiveApplicationForm(),
