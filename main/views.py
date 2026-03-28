@@ -67,7 +67,7 @@ Message: {contact_submission.message}
 
     return render(request, 'contact.html', {
         'form': form,
-        'calendly_url': 'https://calendly.com/your-username'
+        'calendly_url': 'https://calendly.com/powerhanddesigns-info/30min?month=2024-06',
     })
 
 
