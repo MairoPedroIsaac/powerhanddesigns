@@ -4249,12 +4249,12 @@ a[href^="tel:"] {
 .faq-icon {
     width: 30px;
     height: 30px;
-    background: #F0BB13;
+    background: #d0d0d0;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
     flex-shrink: 0;
     margin-left: 20px;
 }
@@ -4266,6 +4266,7 @@ a[href^="tel:"] {
 
 .faq-question.active .faq-icon {
     transform: rotate(180deg);
+    background: #F0BB13;
 }
 
 .faq-answer {
