@@ -355,12 +355,14 @@
             <label class="apply-label">15. Can Powerhand Collective use your application video and/or submitted content for selection, documentation and promotional purposes? *</label>
             <div class="consent-options-wrap">
               {% for radio in form.video_use_consent %}
+                {% if radio.choice_value %}
                 <div class="consent-option-item">
                   {{ radio.tag }}
                   <label for="{{ radio.id_for_label }}" class="consent-option-label">
                     {{ radio.choice_label }}
                   </label>
                 </div>
+                {% endif %}
               {% endfor %}
             </div>
             {% if form.video_use_consent.errors %}
