@@ -155,7 +155,7 @@ class CollectiveApplication(models.Model):
     hope_to_build = models.TextField()
 
     # Section 4 - THE HUNT VIDEO CHALLENGE
-    challenge_video = models.FileField(upload_to='collective/videos/')
+    challenge_video = models.URLField(max_length=500)
     video_use_consent = models.CharField(max_length=10, choices=CONSENT_CHOICES)
 
     submitted_at = models.DateTimeField(auto_now_add=True)

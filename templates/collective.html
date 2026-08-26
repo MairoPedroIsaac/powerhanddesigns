@@ -333,13 +333,9 @@
           </div>
 
           <div class="col-12">
-            <label class="apply-label">13. Upload your video *</label>
-            <div class="apply-upload" id="videoUploadZone">
-              <i class="fas fa-video apply-upload-icon"></i>
-              <p class="apply-upload-text">Drag & drop your video here, or <span class="apply-upload-link">browse</span></p>
-              <p class="apply-upload-hint">Recommended: MP4/MOV | Duration: 30–60s | Orientation: Vertical (9:16)</p>
-              {{ form.challenge_video }}
-            </div>
+            <label class="apply-label">13. Paste your video link *</label>
+            <p class="text-white-50" style="font-size: 0.85rem; margin-bottom: 12px;">Upload your video to Google Drive, YouTube, or TikTok and paste the link here. Make sure the privacy is set to "Public" or "Anyone with the link".</p>
+            {{ form.challenge_video }}
             {% if form.challenge_video.errors %}
               <p class="apply-field-error">{{ form.challenge_video.errors.0 }}</p>
             {% endif %}
@@ -1082,42 +1078,7 @@
   setupOtherToggle('huntingForSelect', 'huntingForOtherContainer');
 })();
 
-// ---- Upload Zones ----
-(function() {
-  function setupUploadZone(zoneId, inputId) {
-    var zone = document.getElementById(zoneId);
-    var inp  = document.getElementById(inputId);
-    if (!zone || !inp) return;
-    
-    zone.addEventListener('click', function() { inp.click(); });
-    
-    zone.addEventListener('dragover', function(e) {
-      e.preventDefault();
-      zone.style.borderColor = '#F0BB13';
-    });
-    
-    zone.addEventListener('dragleave', function() {
-      zone.style.borderColor = '#2a2a2a';
-    });
-    
-    zone.addEventListener('drop', function(e) {
-      e.preventDefault();
-      zone.style.borderColor = '#F0BB13';
-      var f = e.dataTransfer.files[0];
-      if (f) {
-        inp.files = e.dataTransfer.files;
-        zone.querySelector('.apply-upload-text').textContent = '✓ ' + f.name + ' selected';
-      }
-    });
-    
-    inp.addEventListener('change', function() {
-      if (inp.files[0]) {
-        zone.querySelector('.apply-upload-text').textContent = '✓ ' + inp.files[0].name + ' selected';
-      }
-    });
-  }
-  setupUploadZone('videoUploadZone', 'challengeVideoFile');
-})();
+// Upload zones removed
 
 // ---- Multi-step Form Navigation & LocalStorage Persistence ----
 (function() {
@@ -1141,7 +1102,8 @@
     'id_portfolio_link',
     'huntingForSelect',
     'huntingForOtherField',
-    'id_hope_to_build'
+    'id_hope_to_build',
+    'id_challenge_video'
   ];
 
   // Save values on input/change
@@ -1373,11 +1335,10 @@
           showError(hopeToBuild, 'This field is required.');
         }
 
-        // 3. Validate Challenge Video Upload
-        var videoFile = document.getElementById('challengeVideoFile');
-        var hasVideo = videoFile && videoFile.files && videoFile.files.length > 0;
-        if (!hasVideo) {
-          showError(videoFile || 'videoUploadZone', 'This field is required.');
+        // 3. Validate Challenge Video Link
+        var videoLink = document.getElementById('id_challenge_video');
+        if (videoLink && !videoLink.value.trim()) {
+          showError(videoLink, 'This field is required.');
         }
 
         // 4. Validate Consent Choice

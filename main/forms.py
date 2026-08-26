@@ -110,10 +110,9 @@ class CollectiveApplicationForm(forms.ModelForm):
                 'placeholder': 'I am hoping to build...',
                 'rows': 3,
             }),
-            'challenge_video': forms.ClearableFileInput(attrs={
-                'id': 'challengeVideoFile',
-                'accept': 'video/mp4,video/quicktime',
-                'style': 'display:none',
+            'challenge_video': forms.URLInput(attrs={
+                'class': 'apply-input',
+                'placeholder': 'Paste your Google Drive, YouTube, or TikTok link here...',
             }),
         }
 
