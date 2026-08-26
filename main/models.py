@@ -106,13 +106,58 @@ class ProjectGalleryImage(models.Model):
 
 
 class CollectiveApplication(models.Model):
+    PRIMARY_SKILL_CHOICES = [
+        ('Graphic Design', 'Graphic Design'),
+        ('Brand Design / Branding', 'Brand Design / Branding'),
+        ('Content Creation', 'Content Creation'),
+        ('Photography', 'Photography'),
+        ('Videography', 'Videography'),
+        ('Video Editing', 'Video Editing'),
+        ('Motion Design / Animation', 'Motion Design / Animation'),
+        ('Illustration', 'Illustration'),
+        ('Copywriting / Writing', 'Copywriting / Writing'),
+        ('Creative Strategy', 'Creative Strategy'),
+        ('Social Media / Communications', 'Social Media / Communications'),
+        ('UI/UX Design', 'UI/UX Design'),
+        ('Art Direction', 'Art Direction'),
+        ('Other', 'Other'),
+    ]
+
+    HUNTING_FOR_CHOICES = [
+        ('Creative confidence', 'Creative confidence'),
+        ('My creative identity', 'My creative identity'),
+        ('Better skills', 'Better skills'),
+        ('Community', 'Community'),
+        ('Opportunities', 'Opportunities'),
+        ('Clients / income', 'Clients / income'),
+        ('Mentorship', 'Mentorship'),
+        ('A clearer career direction', 'A clearer career direction'),
+        ('Other', 'Other'),
+    ]
+
+    CONSENT_CHOICES = [
+        ('Yes', 'Yes'),
+        ('No', 'No'),
+    ]
+
     full_name = models.CharField(max_length=200)
     email = models.EmailField()
     age = models.PositiveIntegerField()
-    primary_skill = models.CharField(max_length=100)
+    primary_skill = models.CharField(max_length=100, choices=PRIMARY_SKILL_CHOICES)
+    primary_skill_other = models.CharField(max_length=200, blank=True, null=True)
     why_join = models.TextField()
     sample_work = models.FileField(upload_to='collective/portfolios/', blank=True, null=True)
-    portfolio_link = models.URLField(blank=True, null=True)
+    portfolio_link = models.CharField(max_length=255, blank=True, null=True)
+    
+    # Section 3 - THE HUNT
+    hunting_for = models.CharField(max_length=100, choices=HUNTING_FOR_CHOICES)
+    hunting_for_other = models.CharField(max_length=200, blank=True, null=True)
+    hope_to_build = models.TextField()
+
+    # Section 4 - THE HUNT VIDEO CHALLENGE
+    challenge_video = models.FileField(upload_to='collective/videos/')
+    video_use_consent = models.CharField(max_length=10, choices=CONSENT_CHOICES)
+
     submitted_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:

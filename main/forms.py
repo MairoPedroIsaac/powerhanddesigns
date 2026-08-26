@@ -49,9 +49,20 @@ class ContactForm(forms.ModelForm):
 
 
 class CollectiveApplicationForm(forms.ModelForm):
+    video_use_consent = forms.ChoiceField(
+        choices=CollectiveApplication.CONSENT_CHOICES,
+        widget=forms.RadioSelect(attrs={'class': 'consent-radio-input'}),
+        required=True
+    )
+
     class Meta:
         model = CollectiveApplication
-        fields = ['full_name', 'email', 'age', 'primary_skill', 'why_join', 'sample_work', 'portfolio_link']
+        fields = [
+            'full_name', 'email', 'age', 'primary_skill', 'primary_skill_other', 
+            'why_join', 'portfolio_link', 
+            'hunting_for', 'hunting_for_other', 'hope_to_build', 
+            'challenge_video', 'video_use_consent'
+        ]
         widgets = {
             'full_name': forms.TextInput(attrs={
                 'class': 'apply-input',
@@ -67,24 +78,54 @@ class CollectiveApplicationForm(forms.ModelForm):
                 'min': 13,
                 'max': 30,
             }),
-            'primary_skill': forms.TextInput(attrs={
+            'primary_skill': forms.Select(attrs={
                 'class': 'apply-input',
-                'placeholder': 'e.g. Brand Design, Copywriting, Motion',
+                'id': 'primarySkillSelect',
+            }),
+            'primary_skill_other': forms.TextInput(attrs={
+                'class': 'apply-input',
+                'placeholder': 'Please specify your skill...',
+                'id': 'primarySkillOtherField',
             }),
             'why_join': forms.Textarea(attrs={
                 'class': 'apply-input apply-textarea',
                 'placeholder': 'Tell us what drives you...',
+                'rows': 5,
             }),
-            'sample_work': forms.ClearableFileInput(attrs={
-                'id': 'portfolioFile',
-                'accept': '.pdf,.jpg,.jpeg,.png',
+            'portfolio_link': forms.TextInput(attrs={
+                'class': 'apply-input',
+                'placeholder': 'e.g. Behance link, Instagram handle @username, or website',
+            }),
+            'hunting_for': forms.Select(attrs={
+                'class': 'apply-input',
+                'id': 'huntingForSelect',
+            }),
+            'hunting_for_other': forms.TextInput(attrs={
+                'class': 'apply-input',
+                'placeholder': 'Please specify what you are hunting for...',
+                'id': 'huntingForOtherField',
+            }),
+            'hope_to_build': forms.Textarea(attrs={
+                'class': 'apply-input apply-textarea',
+                'placeholder': 'I am hoping to build...',
+                'rows': 3,
+            }),
+            'challenge_video': forms.ClearableFileInput(attrs={
+                'id': 'challengeVideoFile',
+                'accept': 'video/mp4,video/quicktime',
                 'style': 'display:none',
             }),
-            'portfolio_link': forms.URLInput(attrs={
-                'class': 'apply-input',
-                'placeholder': 'https://yourportfolio.com',
-            }),
         }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # Add empty labels / placeholders for select fields
+        self.fields['primary_skill'].choices = [('', 'Select your primary skill...')] + list(CollectiveApplication.PRIMARY_SKILL_CHOICES)
+        self.fields['hunting_for'].choices = [('', 'Select what you are hunting for...')] + list(CollectiveApplication.HUNTING_FOR_CHOICES)
+        # primary_skill_other and hunting_for_other are dynamically shown, so they should not be strictly required by default in the Django field level (we validate in clean)
+        self.fields['primary_skill_other'].required = False
+        self.fields['hunting_for_other'].required = False
+        self.fields['portfolio_link'].required = False
 
     def clean_age(self):
         age = self.cleaned_data.get('age')
@@ -94,8 +135,16 @@ class CollectiveApplicationForm(forms.ModelForm):
 
     def clean(self):
         cleaned_data = super().clean()
-        sample_work = cleaned_data.get('sample_work')
-        portfolio_link = cleaned_data.get('portfolio_link')
-        if not sample_work and not portfolio_link:
-            raise forms.ValidationError("Please upload a sample work file OR provide a portfolio link.")
+
+        # Conditional other validations
+        primary_skill = cleaned_data.get('primary_skill')
+        primary_skill_other = cleaned_data.get('primary_skill_other')
+        if primary_skill == 'Other' and not primary_skill_other:
+            self.add_error('primary_skill_other', "Please specify your primary skill since you selected 'Other'.")
+
+        hunting_for = cleaned_data.get('hunting_for')
+        hunting_for_other = cleaned_data.get('hunting_for_other')
+        if hunting_for == 'Other' and not hunting_for_other:
+            self.add_error('hunting_for_other', "Please specify what you are hunting for since you selected 'Other'.")
+
         return cleaned_data
