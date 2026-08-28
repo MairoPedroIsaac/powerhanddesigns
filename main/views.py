@@ -113,10 +113,15 @@ def collective(request):
 Full Name: {application.full_name}
 Email: {application.email}
 Age: {application.age}
-Primary Skill: {application.primary_skill}
+Primary Skill: {application.primary_skill} {f'({application.primary_skill_other})' if application.primary_skill == 'Other' else ''}
 Why They Want to Join: {application.why_join}
 Portfolio Link: {application.portfolio_link or "Not provided"}
-Sample Work: {"Uploaded" if application.sample_work else "Not uploaded"}
+
+--- THE HUNT ---
+Hunting For: {application.hunting_for} {f'({application.hunting_for_other})' if application.hunting_for == 'Other' else ''}
+Hope to Build: {application.hope_to_build}
+Challenge Video: {application.challenge_video}
+Video Use Consent: {application.video_use_consent}
 ''',
                 from_email=settings.DEFAULT_FROM_EMAIL,
                 recipient_list=[settings.CONTACT_EMAIL],
