@@ -49,7 +49,7 @@ class ContactForm(forms.ModelForm):
 
 
 class CollectiveApplicationForm(forms.ModelForm):
-    video_use_consent = forms.ChoiceField(
+    content_use_consent = forms.ChoiceField(
         choices=CollectiveApplication.CONSENT_CHOICES,
         widget=forms.RadioSelect(attrs={'class': 'consent-radio-input'}),
         required=True
@@ -61,7 +61,7 @@ class CollectiveApplicationForm(forms.ModelForm):
             'full_name', 'email', 'age', 'primary_skill', 'primary_skill_other', 
             'why_join', 'portfolio_link', 
             'hunting_for', 'hunting_for_other', 'hope_to_build', 
-            'challenge_video', 'video_use_consent'
+            'challenge_writeup', 'content_use_consent'
         ]
         widgets = {
             'full_name': forms.TextInput(attrs={
@@ -110,9 +110,10 @@ class CollectiveApplicationForm(forms.ModelForm):
                 'placeholder': 'I am hoping to build...',
                 'rows': 3,
             }),
-            'challenge_video': forms.URLInput(attrs={
-                'class': 'apply-input',
-                'placeholder': 'Paste your Google Drive, YouTube, or TikTok link here...',
+            'challenge_writeup': forms.Textarea(attrs={
+                'class': 'apply-input apply-textarea',
+                'placeholder': 'Write your answer here...',
+                'rows': 5,
             }),
         }
 

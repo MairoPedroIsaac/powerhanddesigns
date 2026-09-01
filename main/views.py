@@ -120,8 +120,8 @@ Portfolio Link: {application.portfolio_link or "Not provided"}
 --- THE HUNT ---
 Hunting For: {application.hunting_for} {f'({application.hunting_for_other})' if application.hunting_for == 'Other' else ''}
 Hope to Build: {application.hope_to_build}
-Challenge Video: {application.challenge_video}
-Video Use Consent: {application.video_use_consent}
+Challenge Writeup: {application.challenge_writeup}
+Content Use Consent: {application.content_use_consent}
 ''',
                 from_email=settings.DEFAULT_FROM_EMAIL,
                 recipient_list=[settings.CONTACT_EMAIL],

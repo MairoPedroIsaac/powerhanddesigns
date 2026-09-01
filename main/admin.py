@@ -90,14 +90,14 @@ class ProjectGalleryImageAdmin(admin.ModelAdmin):
 
 @admin.register(CollectiveApplication)
 class CollectiveApplicationAdmin(admin.ModelAdmin):
-    list_display = ['full_name', 'email', 'age', 'primary_skill', 'has_file', 'has_link', 'has_video', 'submitted_at']
-    list_filter = ['primary_skill', 'hunting_for', 'video_use_consent', 'submitted_at']
+    list_display = ['full_name', 'email', 'age', 'primary_skill', 'has_file', 'has_link', 'has_writeup', 'submitted_at']
+    list_filter = ['primary_skill', 'hunting_for', 'content_use_consent', 'submitted_at']
     search_fields = ['full_name', 'email', 'primary_skill', 'hunting_for']
     readonly_fields = [
         'full_name', 'email', 'age', 'primary_skill', 'primary_skill_other', 
         'why_join', 'sample_work', 'portfolio_link', 
         'hunting_for', 'hunting_for_other', 'hope_to_build', 
-        'challenge_video', 'video_use_consent', 'submitted_at'
+        'challenge_writeup', 'content_use_consent', 'submitted_at'
     ]
     list_per_page = 20
 
@@ -111,10 +111,10 @@ class CollectiveApplicationAdmin(admin.ModelAdmin):
     has_link.boolean = True
     has_link.short_description = 'Portfolio Link'
 
-    def has_video(self, obj):
-        return bool(obj.challenge_video)
-    has_video.boolean = True
-    has_video.short_description = 'Video Uploaded'
+    def has_writeup(self, obj):
+        return bool(obj.challenge_writeup)
+    has_writeup.boolean = True
+    has_writeup.short_description = 'Writeup Submitted'
 
     def has_add_permission(self, request):
         return False

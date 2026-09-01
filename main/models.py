@@ -154,9 +154,9 @@ class CollectiveApplication(models.Model):
     hunting_for_other = models.CharField(max_length=200, blank=True, null=True)
     hope_to_build = models.TextField()
 
-    # Section 4 - THE HUNT VIDEO CHALLENGE
-    challenge_video = models.URLField(max_length=500)
-    video_use_consent = models.CharField(max_length=10, choices=CONSENT_CHOICES)
+    # Section 4 - THE HUNT CHALLENGE
+    challenge_writeup = models.TextField()
+    content_use_consent = models.CharField(max_length=10, choices=CONSENT_CHOICES)
 
     submitted_at = models.DateTimeField(auto_now_add=True)
 

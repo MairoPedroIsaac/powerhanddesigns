@@ -321,23 +321,23 @@
             {% endif %}
           </div>
 
-          <!-- THE HUNT VIDEO CHALLENGE -->
+          <!-- THE HUNT CHALLENGE -->
           <div class="col-12 mt-5">
             <hr style="border-color: #2a2a2a; border-style: dashed;">
-            <h4 class="fw-bold mb-1" style="font-size:1.5rem; color:#F0BB13 !important;">THE HUNT VIDEO CHALLENGE</h4>
+            <h4 class="fw-bold mb-1" style="font-size:1.5rem; color:#F0BB13 !important;">THE HUNT CHALLENGE</h4>
             <div class="text-white-50" style="font-size:0.9rem; line-height: 1.6; margin-bottom: 24px; max-width: 720px;">
-              <p class="mb-2 fw-bold text-white">Create a 30–60 second video answering: <em>“What are you hunting for?”</em></p>
-              <p class="mb-2">Your video can be a talking-head video, short film, documentary, spoken word, animation, visual story, or any creative format you choose.</p>
-              <p class="mb-0 text-white-50" style="font-size:0.8rem; font-style:italic;">We are looking at your idea, creativity, storytelling and point of view—not the equipment you use.</p>
+              <p class="mb-2 fw-bold text-white">Write a short piece answering: <em>“What are you hunting for?”</em></p>
+              <p class="mb-2">Tell us about your drive, your goals, and what you are looking to achieve in your creative journey.</p>
+              <p class="mb-0 text-white-50" style="font-size:0.8rem; font-style:italic;">We are looking for your ideas, creativity, and unique point of view.</p>
             </div>
           </div>
 
           <div class="col-12">
-            <label class="apply-label">Paste your video link *</label>
-            <p class="text-white-50" style="font-size: 0.85rem; margin-bottom: 12px;">Upload your video to Google Drive, YouTube, or TikTok and paste the link here. Make sure the privacy is set to "Public" or "Anyone with the link".</p>
-            {{ form.challenge_video }}
-            {% if form.challenge_video.errors %}
-              <p class="apply-field-error">{{ form.challenge_video.errors.0 }}</p>
+            <label class="apply-label">Your response *</label>
+            <p class="text-white-50" style="font-size: 0.85rem; margin-bottom: 12px;">Please provide your write-up here.</p>
+            {{ form.challenge_writeup }}
+            {% if form.challenge_writeup.errors %}
+              <p class="apply-field-error">{{ form.challenge_writeup.errors.0 }}</p>
             {% endif %}
           </div>
 
@@ -348,9 +348,9 @@
           </div>
 
           <div class="col-12">
-            <label class="apply-label">Can Powerhand Collective use your application video and/or submitted content for selection, documentation and promotional purposes? *</label>
+            <label class="apply-label">If you are selected for Powerhand Collective, will you be okay with us using your content for documentation or promotional purposes? *</label>
             <div class="consent-options-wrap">
-              {% for radio in form.video_use_consent %}
+              {% for radio in form.content_use_consent %}
                 <div class="consent-option-item">
                   {{ radio.tag }}
                   <label for="{{ radio.id_for_label }}" class="consent-option-label">
@@ -359,8 +359,8 @@
                 </div>
               {% endfor %}
             </div>
-            {% if form.video_use_consent.errors %}
-              <p class="apply-field-error">{{ form.video_use_consent.errors.0 }}</p>
+            {% if form.content_use_consent.errors %}
+              <p class="apply-field-error">{{ form.content_use_consent.errors.0 }}</p>
             {% endif %}
           </div>
 
