@@ -1101,7 +1101,7 @@
     'huntingForSelect',
     'huntingForOtherField',
     'id_hope_to_build',
-    'id_challenge_video'
+    'id_challenge_writeup'
   ];
 
   // Save values on input/change
@@ -1110,7 +1110,7 @@
       var target = e.target;
       if (fieldsToPersist.indexOf(target.id) !== -1) {
         localStorage.setItem(storageKeyPrefix + target.id, target.value);
-      } else if (target.name === 'video_use_consent') {
+      } else if (target.name === 'content_use_consent') {
         if (target.checked) {
           localStorage.setItem(storageKeyPrefix + target.name, target.value);
         }
@@ -1121,7 +1121,7 @@
       var target = e.target;
       if (fieldsToPersist.indexOf(target.id) !== -1) {
         localStorage.setItem(storageKeyPrefix + target.id, target.value);
-      } else if (target.name === 'video_use_consent') {
+      } else if (target.name === 'content_use_consent') {
         if (target.checked) {
           localStorage.setItem(storageKeyPrefix + target.name, target.value);
         }
@@ -1152,9 +1152,9 @@
     });
 
     // Restore consent radios
-    var consentVal = localStorage.getItem(storageKeyPrefix + 'video_use_consent');
+    var consentVal = localStorage.getItem(storageKeyPrefix + 'content_use_consent');
     if (consentVal !== null) {
-      var radios = document.getElementsByName('video_use_consent');
+      var radios = document.getElementsByName('content_use_consent');
       var anyChecked = false;
       for (var i = 0; i < radios.length; i++) {
         if (radios[i].checked) {
@@ -1177,7 +1177,7 @@
     fieldsToPersist.forEach(function(fieldId) {
       localStorage.removeItem(storageKeyPrefix + fieldId);
     });
-    localStorage.removeItem(storageKeyPrefix + 'video_use_consent');
+    localStorage.removeItem(storageKeyPrefix + 'content_use_consent');
   }
 
   // Run restoration
@@ -1333,14 +1333,14 @@
           showError(hopeToBuild, 'This field is required.');
         }
 
-        // 3. Validate Challenge Video Link
-        var videoLink = document.getElementById('id_challenge_video');
-        if (videoLink && !videoLink.value.trim()) {
-          showError(videoLink, 'This field is required.');
+        // 3. Validate Challenge Writeup
+        var writeupField = document.getElementById('id_challenge_writeup');
+        if (writeupField && !writeupField.value.trim()) {
+          showError(writeupField, 'This field is required.');
         }
 
         // 4. Validate Consent Choice
-        var radios = document.getElementsByName('video_use_consent');
+        var radios = document.getElementsByName('content_use_consent');
         var anyConsentChecked = false;
         for (var i = 0; i < radios.length; i++) {
           if (radios[i].checked) {
